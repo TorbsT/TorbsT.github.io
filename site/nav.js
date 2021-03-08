@@ -1,5 +1,7 @@
 function resetNav() {
-    getNav().innerHTML = "";
+    var nav = getNav();
+    nav.innerHTML = "";
+    nav.className = "sticky unselectable";
     forAllPages(createNavItem);
     window.addEventListener("resize", updateNavWidths);  // maybe don't run multiple times
     updateNavWidths();
