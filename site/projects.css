@@ -12,7 +12,9 @@ section div {
     height : 100%;
     width : 50%;
     display : inline-block;
-    background-color: red;
+    background-color: #303030;
+    color : white;
+    font-size : 60px;
     overflow: hidden;
     position: relative;
 }
