@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Torbsite | Exercise</title>
+    <link rel="stylesheet" type="text/css" href="global.css">
+</head>
+
+<body>
+    <header class="scrollParent unselectable">
+        <img class="scroll" src="imgs/melonman.jpg" data-scrollscalar="0.7" data-scrolloffset="0"
+            data-scrollanchorbottom="true">
+
+        </img>
+        <!--scroll-->
+        <div id="headertxt" class="scroll">
+            <h2>Exercise</h2>
+        </div>
+        <!--headertxt-->
+    </header>
+    <nav></nav>
+    <article class="bg">
+        <article class="fg">
+            <button>Log session</button>
+
+            <div id="logsession" style="background-color: blue;">
+                <label for="date">Date</label>
+                <input type="date">
+                <button>Add exercise & results</button>
+                <div id="addresults" style="background-color: red;">
+
+                    <div>
+                        Exercise: <select>
+                            <option value="1">Yeeee</option>
+                            <option value="13">Yee2ee</option>
+                            <option value="61">Ye3eee</option>
+                        </select>
+                        <span style="background-color: green;">
+                        Difficulty: <input type="number" min="0" max="9999999999">kg,
+                        Results: <input type="number" min="0" max="9999999999">s,
+                        Prek: <input type="number" min="0" max="9999999999" placeholder="none">s
+                        </span>
+                    </div>
+
+                    <div>
+                        Exercise: <select>
+                            <option value="1">Yeeee</option>
+                            <option value="13">Yee2ee</option>
+                            <option value="61">Ye3eee</option>
+                        </select>
+                        Difficulty: <input type="number" min="0" max="9999999999">kg,
+                        Results: <input type="number" min="0" max="9999999999">s,
+                        Prek: <input type="number" min="0" max="9999999999" placeholder="none">s
+                    </div>
+
+                </div>
+
+                <button>Submit</button>
+            </div>
+        </article>
+    </article>
+</body>
+<script src="scroll.js"></script>
+<script src="nav.js"></script>
+
+</html>
