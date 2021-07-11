@@ -6,19 +6,26 @@ section {
     cursor: pointer;
     margin-top: 30px;
     transition : 0.2s;
+    opacity: 0.9;
 }
 section:hover {
     box-shadow: 0px 0px 5px black;
+    opacity: 1;
 }
 section div {
     height : 100%;
     width : 50%;
     display : inline-block;
-    background-color: #303030;
-    color : white;
-    font-size : 60px;
     overflow: hidden;
     position: relative;
+}
+section h1 {
+    margin : 4px 4px 6px 4px;
+    font-size : 36px;
+}
+section p {
+    margin : 4px;
+    font-size : 16px;
 }
 section div img {
     min-width : 100%;

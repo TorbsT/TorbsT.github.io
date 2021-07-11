@@ -35,7 +35,11 @@ nav {
     box-shadow : 0px 0px 5px black;
     z-index: 1000;
 }
-nav div {
+nav ul {
+    padding : 0px;
+    margin : 0px;
+}
+nav li {
     display : inline-block;
     height : 100%;
     overflow : hidden;
@@ -43,7 +47,7 @@ nav div {
     white-space: nowrap;
     
 }
-nav div * {
+nav li * {
     font-size : 100%;
     background-color: transparent;
     border-radius : 0px;
@@ -55,7 +59,7 @@ nav div * {
     transition : 0s;
     color : white;
 }
-nav div *:hover {
+nav li *:hover {
     color : white;
     text-shadow : #030303 4px 4px 0px;
     background-color : #222222;
@@ -106,4 +110,15 @@ img.scroll {
     -webkit-user-select: none;
     -o-user-select: none;
     user-select: none;
+}
+.centered {
+    text-align: center;
+}
+.lightmode {
+    color : #000000;
+    background-color: #EEEEEE;
+}
+.darkmode {
+    color : #EEEEEE;
+    background-color: #111111;
 }
