@@ -13,25 +13,27 @@ body {
 }
 
 article.bg {
-    padding-top : 5vh;
+    color : white;
+    padding-top : 0vh;
     padding-bottom : 5vh;
-    background-color: #4281A4;
+    background-color: #333333;
     min-height : 20vh; /* body.height - header.height */
 }
 article.fg {
     margin : auto;
-    width : 900px;
+    width : 700px;
     max-width : 100%;
 }
 
 /*NAV*/
 nav {
-    background-color: #386432;
+    background-color: #111111;
     position : sticky;
     height : 12vh;
     font-size : 6vh;
     opacity : 1;
     box-shadow : 0px 0px 5px black;
+    z-index: 1000;
 }
 nav div {
     display : inline-block;
@@ -51,11 +53,12 @@ nav div * {
     cursor : pointer;
     font-weight : bold;
     transition : 0s;
+    color : white;
 }
 nav div *:hover {
     color : white;
     text-shadow : #030303 4px 4px 0px;
-    background-color : #335c2d;
+    background-color : #222222;
 }
 
 /*HEADER, SCROLL*/
