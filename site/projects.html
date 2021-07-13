@@ -9,17 +9,17 @@
 </head>
 
 <body>
-    <header class="scrollParent unselectable">
-        <img class="scroll" src="imgs/melonman.jpg" data-scrollscalar="0.7" data-scrolloffset="0"
+    <header class="scrollParent unselectable hiddenOverflow">
+        <img class="scroll" src="imgs/melonman.jpg" data-doscrolly="true", data-scrollscalary="0.7" data-scrolloffsety="0"
             data-scrollanchorbottom="false">
 
         </img>
     </header>
+    <nav></nav>
     <article class="bg">
-        <nav></nav>
         <article class="fg">
             <h1 class="centered">Prosjekter og greier</h1>
-            <article id="projectswrapper">
+            <article id="projectswrapper" class="scrollParent">
                 <!--
         <section class="unselectable lightmode" href="https://folk.ntnu.no/torbjss/Documents/html/">
             <div class="content">
@@ -43,8 +43,8 @@
         </article>
 </body>
 
-<script src="scroll.js"></script>
 <script src="nav.js"></script>
-<script src="projects.js"></script>
+<script src="projects.js"></script>  <!--must be before scroll-->
+<script src="scroll.js"></script>
 
 </html>

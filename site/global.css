@@ -14,10 +14,12 @@ body {
 
 article.bg {
     color : white;
+    z-index: -100000;
     padding-top : 0vh;
     padding-bottom : 5vh;
-    background-color: #333333;
+    background-color: #333353;
     min-height : 20vh; /* body.height - header.height */
+    overflow: hidden;
 }
 article.fg {
     margin : auto;
@@ -27,15 +29,16 @@ article.fg {
 
 /*NAV*/
 nav {
-    background-color: #111111;
+    background-color: #111121;
     position : sticky;
     height : 12vh;
     font-size : 6vh;
     opacity : 1;
-    box-shadow : 0px 0px 5px black;
+    box-shadow : 0vh -12vh 24vh 24vh rgba(10, 10, 10, 0.7);
     z-index: 1000;
 }
 nav ul {
+    height : 100%;
     padding : 0px;
     margin : 0px;
 }
@@ -56,17 +59,18 @@ nav li * {
     height : 100%;
     cursor : pointer;
     font-weight : bold;
-    transition : 0s;
+    transition : 0.05s;
     color : white;
 }
 nav li *:hover {
     color : white;
     text-shadow : #030303 4px 4px 0px;
-    background-color : #222222;
+    background-color : #222242;
 }
 
 /*HEADER, SCROLL*/
 header {
+    z-index : 10;
     background-color: #2c9534;
     width : 100%;
     color : #FAFAFA;
@@ -74,7 +78,7 @@ header {
 }
 #headertxt {
     line-height: 0px;
-    z-index : 10;
+    z-index : inherit;
     left : 15vw;
     top : 15px;  /* NOTE: MODIFIES iY OF SCROLL.JS, MEANING ONLY INITIAL TOP*/
     
@@ -84,12 +88,15 @@ header {
 }
 .scrollParent {
     position : relative;  /* Needed for overflow: hidden */
+}
+.hiddenOverflow {
     overflow : hidden;
 }
 .scroll {
-    position : absolute;
+    position : relative;
 }
 img.scroll {
+    z-index: -100;
     min-width : 100%;
     min-height : 100%;
 
@@ -122,3 +129,7 @@ img.scroll {
     color : #EEEEEE;
     background-color: #111111;
 }
+
+
+
+

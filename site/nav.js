@@ -1,4 +1,4 @@
-var reloadBugFixValue = 20;
+var reloadBugFixValue = 0;
 
 function resetNav() {
     var nav = getNav();
@@ -88,8 +88,7 @@ function goTo(link) {
 
 var pages = [
     {"name":"Home", "link":"_index.html"},
-    {"name":"My projects", "link":"projects.html"},
-    {"name":"Very long name for a navthing"}
+    {"name":"My projects", "link":"projects.html"}
 ]
 
 

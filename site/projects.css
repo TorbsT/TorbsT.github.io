@@ -1,37 +1,105 @@
+#projectswrapper {
+    min-height : 1000px;
+}
 section {
+    position: relative;
+    z-index: 20;
     width : 100%;
     height : 300px;
     background-color: green;
     box-shadow: 0px 0px 2px black;
-    cursor: pointer;
-    margin-top: 30px;
+    margin-top: 60px;
     transition : 0.2s;
-    opacity: 0.9;
+    opacity: 1;
+    display : flex;
 }
 section:hover {
-    box-shadow: 0px 0px 5px black;
-    opacity: 1;
+
 }
-section div {
+section .half {
+    background-color: #EEEEEE;
     height : 100%;
     width : 50%;
-    display : inline-block;
-    overflow: hidden;
+    /*display : inline-block;*/
+    /*overflow: hidden;*/
     position: relative;
+    z-index: 10;
+}
+.content {
+    display : flex;
+    flex-direction: column;
+}
+.content .txt {
+    position: relative;
+    width: 100%;
+    align-self: flex-start;
+    margin-bottom : auto;
+}
+section .content .linkswrapper {
+    position: relative;
+    width : 100%;
+    align-self: flex-end;
+}
+section .content .linkswrapper ul {
+    width : 100%;
+    background-color: #EEEEEE;  /*inherit does not work*/
+    position : relative;
+    /*align-self : flex-end;*/
+    list-style-type : none;
+    padding : 5px 5px 5px 5px;
+    margin : 0px;
+}
+
+.linkswrapper ul li {
+    display: inline-block;
+}
+.tooltip {
+    cursor : pointer;
+}
+.tooltip img {
+    opacity: 0.6;
+    max-width : 50px;
+    max-height : 50px;
+}
+.tooltip:hover img {
+    opacity: 1;
+    /*
+    max-width : 64px;
+    max-height : 64px;
+    */
 }
 section h1 {
     margin : 4px 4px 6px 4px;
     font-size : 36px;
 }
+section h2 {
+    margin : 4px 4px 6px 4px;
+    font-size : 30px;
+}
 section p {
     margin : 4px;
     font-size : 16px;
 }
-section div img {
+.title {
+    max-width : 100%;
+    max-height : 75px;
+    overflow: hidden;
+    white-space :nowrap;
+    text-overflow: ellipsis;
+}
+.desc {
+    max-height : 175px;
+}
+section .imgwrapper {
+    overflow: hidden;
+    
+}
+section .imgwrapper img {
     min-width : 100%;
     min-height : 100%;
     max-width : 150%;
     max-height : 150%;
+    box-shadow: inset 16px black;
 }
 img.centered {
     /* Requires position:absolute or position:relative */
@@ -39,4 +107,27 @@ img.centered {
     left : 50%;  
     top : 50%;
     transform : translate(-50%, -50%);
+}
+
+.tooltiptext {
+    display : block;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #111141;
+    padding : 5px;
+    font-size : 20px;
+    color : #CCCCCC;
+    position: absolute;
+    bottom : 10px;
+    z-index: -10000;
+    overflow : hidden;
+    white-space : nowrap;
+}
+
+.tooltip img, .tooltiptext {
+    transition :cubic-bezier(0, 1, 0.5, 1);
+    transition-duration: 0.4s;
+}
+.tooltip:hover + .tooltiptext {
+    display : block;
+    bottom : -38px;
 }

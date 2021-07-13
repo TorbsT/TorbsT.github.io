@@ -1,9 +1,11 @@
 var scrollClass = "scroll";
-var defaultScrollScalar = 1;  // relative, typically [-1, 1]
-var defaultScrollOffset = 0;  // in px
+var defaultScrollScalarY = 0;  // relative, typically [-1, 1]
+var defaultScrollScalarX = 0;
+var defaultScrollOffsetX = 0;  // in px
+var defaultScrollOffsetY = 0;
 
 function init() {
-    forAllScrollELsDo(logInitialY);
+    forAllScrollELsDo(logInitialXY);
     addPageEvents();
     scrollPage();
 }
@@ -23,24 +25,35 @@ function forAllScrollELsDo(f) {
 }
 function scroll(el) {
     var pageY = getPageY();
+    var iX = el.iX;
     var iY = el.iY;
     var d = el.dataset;
-    var scrollScalar = d.scrollscalar || defaultScrollScalar;
-    var scrollOffset = d.scrolloffset|| defaultScrollOffset;
+    var scrollScalarX = d.scrollscalarx || defaultScrollScalarX;
+    var scrollScalarY = d.scrollscalary || defaultScrollScalarY;
+    var scrollOffsetX = d.scrolloffsetx || defaultScrollOffsetX;
+    var scrollOffsetY = d.scrolloffsety || defaultScrollOffsetY;
     var scrollAnchorBottom = d.scrollanchorbottom || false;
+    var doScrollX = d.doscrollx || false;
+    var doScrollY = d.doscrolly || false;
 
+    var newX = scrollScalarX * pageY + iX - scrollOffsetX;
+    console.log(newX + " " + scrollScalarX + " " + pageY + " " + iX + " " + scrollOffsetX);
+    var newY = scrollScalarY * pageY + iY - scrollOffsetY;
+    if (doScrollX) el.style.left = newX + "px";
+    if (doScrollY) {
+        el.style.top = newY + "px";
 
-    var newY = scrollScalar*pageY + iY - scrollOffset;
-    el.style.top = newY+"px";
-    
-    // for some reason, this must be done on mobile
-    if (isMobile() && scrollAnchorBottom && el.offsetTop < 0) {
-        newY -= el.offsetTop;
+        // for some reason, this must be done on mobile
+        if (isMobile() && scrollAnchorBottom && el.offsetTop < 0) {
+            newY -= el.offsetTop;
+        }
+        el.style.top = newY + "px";
     }
-    el.style.top = newY+"px";
-    
 }
-function logInitialY(el) {
+function logInitialXY(el) {
+    var x = el.getBoundingClientRect().left;
+    el.iX = x;
+
     var y = el.getBoundingClientRect().top;
     var docY = document.documentElement.scrollTop;
     var iY = y + docY;
