@@ -13,27 +13,36 @@ body {
 }
 
 article.bg {
-    padding-top : 5vh;
+    color : white;
+    z-index: -100000;
+    padding-top : 0vh;
     padding-bottom : 5vh;
-    background-color: #4281A4;
+    background-color: #333353;
     min-height : 20vh; /* body.height - header.height */
+    overflow: hidden;
 }
 article.fg {
     margin : auto;
-    width : 900px;
+    width : 700px;
     max-width : 100%;
 }
 
 /*NAV*/
 nav {
-    background-color: #386432;
+    background-color: #111121;
     position : sticky;
     height : 12vh;
     font-size : 6vh;
     opacity : 1;
-    box-shadow : 0px 0px 5px black;
+    box-shadow : 0vh -12vh 24vh 24vh rgba(10, 10, 10, 0.7);
+    z-index: 1000;
 }
-nav div {
+nav ul {
+    height : 100%;
+    padding : 0px;
+    margin : 0px;
+}
+nav li {
     display : inline-block;
     height : 100%;
     overflow : hidden;
@@ -41,7 +50,7 @@ nav div {
     white-space: nowrap;
     
 }
-nav div * {
+nav li * {
     font-size : 100%;
     background-color: transparent;
     border-radius : 0px;
@@ -50,16 +59,18 @@ nav div * {
     height : 100%;
     cursor : pointer;
     font-weight : bold;
-    transition : 0s;
+    transition : 0.05s;
+    color : white;
 }
-nav div *:hover {
+nav li *:hover {
     color : white;
     text-shadow : #030303 4px 4px 0px;
-    background-color : #335c2d;
+    background-color : #222242;
 }
 
 /*HEADER, SCROLL*/
 header {
+    z-index : 10;
     background-color: #2c9534;
     width : 100%;
     color : #FAFAFA;
@@ -67,7 +78,7 @@ header {
 }
 #headertxt {
     line-height: 0px;
-    z-index : 10;
+    z-index : inherit;
     left : 15vw;
     top : 15px;  /* NOTE: MODIFIES iY OF SCROLL.JS, MEANING ONLY INITIAL TOP*/
     
@@ -77,12 +88,15 @@ header {
 }
 .scrollParent {
     position : relative;  /* Needed for overflow: hidden */
+}
+.hiddenOverflow {
     overflow : hidden;
 }
 .scroll {
-    position : absolute;
+    position : relative;
 }
 img.scroll {
+    z-index: -100;
     min-width : 100%;
     min-height : 100%;
 
@@ -104,3 +118,18 @@ img.scroll {
     -o-user-select: none;
     user-select: none;
 }
+.centered {
+    text-align: center;
+}
+.lightmode {
+    color : #000000;
+    background-color: #EEEEEE;
+}
+.darkmode {
+    color : #EEEEEE;
+    background-color: #111111;
+}
+
+
+
+
