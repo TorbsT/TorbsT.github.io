@@ -1,0 +1,9 @@
+.exercise-content {
+    background-color: blue;
+}
+#add-stats {
+    background-color: red;
+}
+#add-stats div span {
+    background-color: green;
+}
