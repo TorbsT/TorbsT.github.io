@@ -1,16 +1,25 @@
+var reloadBugFixValue = 0;
+
 function resetNav() {
     var nav = getNav();
     nav.innerHTML = "";
     nav.className = "sticky unselectable";
+
+    var navList = document.createElement("ul");
+    nav.appendChild(navList);
+
     forAllPages(createNavItem);
     window.addEventListener("resize", updateNavWidths);  // maybe don't run multiple times
     updateNavWidths();
 }
 
 function getNavItems() {
-    var buttonWrappers = getNav().children;
+    var buttonWrappers = getNavList().children;
     if (buttonWrappers.length == 0) console.error("nav has no pages");
     return buttonWrappers;
+}
+function getNavList() {
+    return getNav().children[0];
 }
 function getNav() {
     var nav = document.getElementsByTagName("nav");
@@ -32,6 +41,7 @@ function updateNavWidths() {
 }
 function updatePageStyles() {
     var widthLeft = Math.floor(getNav().getBoundingClientRect().width);  // floor since it rounds otherwise
+    widthLeft -= reloadBugFixValue;
     
     console.log("Total width is "+widthLeft);
     for (var i = 0; i < pages.length; i++) {
@@ -41,10 +51,11 @@ function updatePageStyles() {
         page["width"] = dedicatedWidth;
         widthLeft -= dedicatedWidth;
     }
+    console.log("width leftover is "+widthLeft);
 }
 
 function createNavItem(i) {
-    var item = document.createElement("div");
+    var item = document.createElement("li");
     var page = pages[i];
 
     var interactable = document.createElement("button");
@@ -53,7 +64,7 @@ function createNavItem(i) {
     interactable.addEventListener("click", interactableClicked);
 
     item.appendChild(interactable);
-    getNav().appendChild(item);
+    getNavList().appendChild(item);
 }
 function forAllPages(f) {
     for (var i = 0; i < pages.length; i++) {
@@ -77,8 +88,7 @@ function goTo(link) {
 
 var pages = [
     {"name":"Home", "link":"_index.html"},
-    {"name":"My projects", "link":"projects.html"},
-    {"name":"Very long name for a navthing"}
+    {"name":"My projects", "link":"projects.html"}
 ]
 
 

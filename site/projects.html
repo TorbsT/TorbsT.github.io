@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Torbsite | Projects</title>
     <link rel="stylesheet" type="text/css" href="global.css">
     <link rel="stylesheet" type="text/css" href="projects.css">
-</head>    
-<body>
-<nav></nav>
-<article class="bg">
-    <article class="fg">
-        ide: lag featured project. litt større kanskje? helst et bra prosjekt, f.eks frontegy hvis det blir bra
+</head>
 
-        <section class="unselectable">
-            <a href="https://folk.ntnu.no/torbjss/Documents/html/"><div>O'Burger</div><div><img src="imgs/oburger.PNG"/></div></a>
+<body>
+    <header class="scrollParent unselectable hiddenOverflow">
+        <img class="scroll" src="imgs/melonman.jpg" data-doscrolly="true", data-scrollscalary="0.7" data-scrolloffsety="0"
+            data-scrollanchorbottom="false">
+
+        </img>
+    </header>
+    <nav></nav>
+    <article class="bg">
+        <article class="fg">
+            <h1 class="centered">Prosjekter og greier</h1>
+            <article id="projectswrapper" class="scrollParent">
+                <!--
+        <section class="unselectable lightmode" href="https://folk.ntnu.no/torbjss/Documents/html/">
+            <div class="content">
+                <h1>O'Burger</h1>
+                <hr>
+                <p>Obama's official burger website</p>
+                <p>Made with HTML, JS and CSS</p>
+            </div><div><img src="imgs/oburger.PNG"/></div>
         </section>
-        <section class="unselectable">
-            <a href="exercise.html"><div>Exercise</div><div><img src="imgs/melonman.jpg"/></div></a>
+        <section class="unselectable lightmode">
+            <a href="https://torbst.itch.io/allied-abductees" target="_blank"><div class="content">
+                <h1>Allied Abductees</h1>
+                <hr>
+                <p>Submission for the 2021 GMTK game jam</p>
+                <p>Made with Unity and C#</p>
+            </div><div><img src="imgs/alliedAbductees.PNG"/></div></a>
         </section>
     </article>
-</article>
+    -->
+            </article>
+        </article>
 </body>
 
 <script src="nav.js"></script>
+<script src="projects.js"></script>  <!--must be before scroll-->
+<script src="scroll.js"></script>
+
 </html>
