@@ -38,6 +38,7 @@ function scroll(el) {
 
     var newX = scrollScalarX * pageY + iX - scrollOffsetX;
     console.log(newX + " " + scrollScalarX + " " + pageY + " " + iX + " " + scrollOffsetX);
+    console.log(el);
     var newY = scrollScalarY * pageY + iY - scrollOffsetY;
     if (doScrollX) el.style.left = newX + "px";
     if (doScrollY) {
@@ -46,6 +47,12 @@ function scroll(el) {
         // for some reason, this must be done on mobile
         if (isMobile() && scrollAnchorBottom && el.offsetTop < 0) {
             newY -= el.offsetTop;
+        } else if (scrollAnchorBottom) {
+            console.log("asdad");
+            var height = el.offsetHeight;
+            var parentHeight = el.parentElement.offsetHeight;
+            console.log(height + " " + parentHeight)
+            newY -= (height-parentHeight);
         }
         el.style.top = newY + "px";
     }

@@ -88,7 +88,7 @@ function goTo(link) {
 
 var pages = [
     {"name":"Home", "link":"_index.html"},
-    {"name":"My projects", "link":"projects.html"}
+    {"name":"Projects", "link":"projects.html"}
 ]
 
 

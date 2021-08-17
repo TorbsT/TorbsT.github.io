@@ -77,7 +77,7 @@ header {
     height : 80vh;  /* <- article.bg.minHeight */
 }
 #headertxt {
-    line-height: 0px;
+    position: absolute;
     z-index : inherit;
     left : 15vw;
     top : 15px;  /* NOTE: MODIFIES iY OF SCROLL.JS, MEANING ONLY INITIAL TOP*/
