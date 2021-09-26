@@ -12,7 +12,7 @@ var projects =
     {
         title:"<h1>O'Burger</h1>",
         desc:"<p>Obama's very official burger website</p><p>Made with HTML, JS and CSS by a team of five. This was our project for the course IT2805 (2020).</p>",
-        img:"imgs/oburger.PNG",
+        img:"imgs/oburger.GIF",
         github:"https://github.com/sindrimt/O-Burger",
         webp:"https://folk.ntnu.no/torbjss/Documents/html/"
     },
