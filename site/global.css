@@ -71,7 +71,6 @@ nav li *:hover {
 /*HEADER, SCROLL*/
 header {
     z-index : 10;
-    background-color: #2c9534;
     width : 100%;
     color : #FAFAFA;
     height : 80vh;  /* <- article.bg.minHeight */

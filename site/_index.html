@@ -13,15 +13,20 @@
         <img class="scroll" src="imgs/bdayart.jpg" data-doscrolly="true" data-scrollscalary="0.7" data-scrollanchorbottom="true">
 
         </img><!--scroll-->
-        <div id="headertxt" class="scroll" data-scrolly="true" data-scrollscalary="2">
+        <div id="headertxt" class="scroll" data-doscrolly="true" data-scrollscalary="1">
             <h2>Torbsite</h2>
         </div><!--headertxt-->
     </header>
     <nav></nav>
     <article class="bg">
+        
         <article class="fg">
-            i mak gaem
+            Tea biscuits biscuits fuck this tea<br>
+            Steak fries
         </article><!--fg-->
+        <article class="fg" id="chartthing">
+            <div id="chartContainer" style="height: 700px; width: 100%;"></div>
+        </article>
     </article>
     <!--bg-->
     <footer>
@@ -30,4 +35,46 @@
 </body>
 <script src="scroll.js"></script>
 <script src="nav.js"></script>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+    window.onload = function () {
+	
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        
+        title:{
+            text:"Visualization of my current skills"
+        },
+        axisX:{
+            interval: 1
+        },
+        axisY2:{
+            interlacedColor: "rgba(100,77,101,.2)",
+            gridColor: "rgba(1,77,101,.1)",
+            title: "X-axis: Approximation of an arbitrary number"
+        },
+        data: [{
+            type: "bar",
+            name: "competence",
+            axisYType: "secondary",
+            color: "#F14D65",
+            dataPoints: [
+                { y: 95, label: "Depression" },
+                { y: 5, label: "Unreal Engine" },
+                { y: 25, label: "CSS" },
+                { y: 30, label: "PHP" },
+                { y: 30, label: "SQL" },
+                { y: 30, label: "Python" },
+                { y: 30, label: "Javascript" },
+                { y: 30, label: "Java" },
+                { y: 30, label: "HTML" },
+                { y: 50, label: "Unity/C#" },
+            ]
+        }]
+    });
+    chart.render();
+    
+    }
+</script>
 </html>

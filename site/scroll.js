@@ -37,8 +37,11 @@ function scroll(el) {
     var doScrollY = d.doscrolly || false;
 
     var newX = scrollScalarX * pageY + iX - scrollOffsetX;
-    console.log(newX + " " + scrollScalarX + " " + pageY + " " + iX + " " + scrollOffsetX);
-    console.log(el);
+    //console.log(doScrollY + " " + el.id + " " + pageY);
+    if (el.id == "headertxt") {
+        
+    }
+    
     var newY = scrollScalarY * pageY + iY - scrollOffsetY;
     if (doScrollX) el.style.left = newX + "px";
     if (doScrollY) {
@@ -48,10 +51,8 @@ function scroll(el) {
         if (isMobile() && scrollAnchorBottom && el.offsetTop < 0) {
             newY -= el.offsetTop;
         } else if (scrollAnchorBottom) {
-            console.log("asdad");
             var height = el.offsetHeight;
             var parentHeight = el.parentElement.offsetHeight;
-            console.log(height + " " + parentHeight)
             newY -= (height-parentHeight);
         }
         el.style.top = newY + "px";
