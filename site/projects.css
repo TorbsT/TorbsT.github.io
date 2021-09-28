@@ -157,7 +157,8 @@ img.centered {
 .label {
     display : inline-block;
     border-radius: 10px;
-    padding : 4px 12px 4px 12px;
-    margin : 5px;
+    padding : 2px 12px 2px 12px;
+    margin-left : 5px;
+    font-size: 14px;
 
 }
