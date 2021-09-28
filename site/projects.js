@@ -7,13 +7,35 @@ var javaLabel = { text:"Java", bgcolor:"red"};
 
 var projects =
 [
+    /*
+    {
+        title:"<h1>a very long title i made in order to see how the sections behave when the text becomes too word-y</h1>",
+        desc:"<p>an even longerer description because more space is allocated to it. Including this fact, description text is also smaller, making overall possible word count even bigger. However, I am trying my best to exceed this word count limit. As you can probably tell, my strategy consists mostly of spouting out random sentences without actually getting anywhere. As a consequence of this, no message in particular is conveyed, and as such nobody learns anything useful.</p>",
+        vid:"imgs/alliedabductees.mp4",
+        startyear:200,
+        endyear:200,
+        labels:[unityLabel,csharpLabel,htmlLabel,javaLabel,jsLabel],
+        github:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    */
+    {
+        title:"<h2>O'Burger: Barackening</h2>",
+        desc:"<p>App for ordering food from O'Burger</p><p>A continuation of the legendary O'Burger series, which now supports sending and retrieving orders on an external server.</p><p>This was our project for the course IT1901. Made by a team of four practicing agile development.</p>",
+        img:"imgs/barackening.png",
+        startyear:2021,
+        endyear:2021,
+        labels:[javaLabel],
+        gitlab:"https://gitlab.stud.idi.ntnu.no/it1901/groups-2021/gr2137/gr2137",
+        width:900
+    },
+
     {
         title:"<h2>Allied Abductees</h2>",
         desc:"<p>Submission for the 2021 GMTK game jam</p><p>Made in 48 hours with Unity and C# by a team of three.</p>",
         vid:"imgs/alliedabductees.mp4",
         startyear:2021,
         endyear:2021,
-        //labels:[unityLabel, csharpLabel],
+        labels:[unityLabel, csharpLabel],
         github:"https://github.com/TorbsT/AlliedAbductees",
         itch:"https://torbst.itch.io/allied-abductees",
         width:900
@@ -41,22 +63,12 @@ var projects =
 
     {
         title:"<h1>(WIP) Frontegy</h1>",
-        desc:"<p>Chess with a twist</p><p>Made in Unity/C# by me. This project is largely a sandbox for me to experiment with different code structures (2020-present).</p>",
+        desc:"<p>A mix of chess and poker</p><p>Made in Unity/C# by me. This project is largely a sandbox for me to experiment with different code structures (2020-present).</p>",
         img:"imgs/frontegy.PNG",
         startyear:2020,
         //endyear:current
-        //labels:[unityLabel, csharpLabel],
+        labels:[unityLabel, csharpLabel],
         github:"https://github.com/TorbsT/Frontegy"
-    },
-
-
-    {
-        title:"<h1>a very long title i made in order to see how the sections behave when the text becomes too word-y</h1>",
-        desc:"<p>an even longerer description because more space is allocated to it. Including this fact, description text is also smaller, making overall possible word count even bigger. However, I am trying my best to exceed this word count limit. As you can probably tell, my strategy consists mostly of spouting out random sentences without actually getting anywhere. As a consequence of this, no message in particular is conveyed, and as such nobody learns anything useful.</p>",
-        vid:"imgs/alliedabductees.mp4",
-        startyear:200,
-        endyear:200,
-        github:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
 ];
 var alwaysPlay = true;
@@ -78,18 +90,7 @@ function addProjects() {
         var contentEL = document.createElement("div");
         contentEL.className = "content half";
 
-        if (true) {
-        var labelsEL = document.createElement("div");
-        labelsEL.className = "labels";
-        if (project.labels != null) {
-            console.log(project.title + " has project label");
-            for (var i = 0; i < project.labels.length; i++) {
-                var label = project.labels[i];
-                addLabel(labelsEL, label);
-            }
-        }
-
-        }
+        console.log("c");
 
         var flexyEL = document.createElement("div");
         flexyEL.className = "flexy";
@@ -101,7 +102,49 @@ function addProjects() {
         titleEL.className = "title";
         descEL.className = "desc";
         titleEL.innerHTML = project.title;
-        descEL.innerHTML = project.desc;
+        
+
+        var descTextEL = document.createElement("div");
+        descTextEL.innerHTML = project.desc;
+
+        if (true) {
+            var labelsEL = document.createElement("div");
+            labelsEL.className = "labels";
+            console.log("b");
+    
+            // Year
+            var startyear = project.startyear;
+            var endyear = project.endyear;
+            if (startyear != null || endyear != null) {
+                var label = {};
+                label.bgcolor = "black";
+                var txt = "";
+                if (startyear == endyear) txt = startyear;
+                else {
+                    if (startyear != null) txt += startyear;
+                    else txt += "unknown";
+    
+                    txt += " - ";
+    
+                    if (endyear != null) txt += endyear;
+                    else txt += "present";
+                }
+                label.text = txt;
+                addLabel(labelsEL, label);
+            }
+    
+            // Languages/shit
+            if (project.labels != null) {
+                console.log("a");
+                console.log(project.title + " has project label");
+                for (var j = 0; j < project.labels.length; j++) {
+                    var label = project.labels[j];
+                    addLabel(labelsEL, label);
+                }
+            }
+    
+            }
+
 
         var linksWrapperEL = document.createElement("div");
         linksWrapperEL.className = "linkswrapper";
@@ -120,6 +163,7 @@ function addProjects() {
         {
             var imgEL = document.createElement("img");
             imgEL.src = project.img;
+            imgEL.className = "unselectable";
             imgWrapperEL.appendChild(imgEL);
         }
         else if (project.vid) {
@@ -140,13 +184,13 @@ function addProjects() {
             imgWrapperEL.appendChild(vidEL);
         }
         
-
+        descEL.appendChild(labelsEL);
+        descEL.appendChild(descTextEL);
         txtEL.appendChild(titleEL);
         txtEL.appendChild(descEL);
 
         linksWrapperEL.appendChild(linksEL);
         flexyEL.appendChild(txtEL);
-        flexyEL.appendChild(labelsEL);
         flexyEL.appendChild(linksWrapperEL);
         contentEL.appendChild(flexyEL);
 
@@ -165,7 +209,7 @@ function addLink(img, link, tooltip) {
     imgEL.src = img;
     imgEL.alt = tooltip;
 
-    anchorEL.className = "tooltip";
+    anchorEL.className = "tooltip unselectable";
 
     anchorEL.href = link;
     anchorEL.appendChild(imgEL);
@@ -211,13 +255,13 @@ function sortByEndYear() {
 function addLabel(el, label) {
     console.log("Processing "+label.text);
     var labEL = document.createElement("div");
-    labEL.className = "label";
+    labEL.className = "label unselectable";
     labEL.innerText = label.text;
     labEL.style.backgroundColor = label.bgcolor;
     labEL.style.color = "white";
     el.appendChild(labEL);
 }
 console.log(projects);
-//sortByEndYear();
+sortByEndYear();
 console.log(projects);
 addProjects();

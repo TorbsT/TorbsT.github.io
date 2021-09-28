@@ -44,7 +44,7 @@ section .half {
     position: relative;
     width: 100%;
     align-self: flex-start;
-    margin-bottom : auto;
+    flex-grow: 1;
 }
 section .content .linkswrapper {
     position: relative;
@@ -103,7 +103,8 @@ section p {
 }
 .desc {
     max-height : 175px;
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 section .imgwrapper {
     float : left;
@@ -158,4 +159,5 @@ img.centered {
     border-radius: 10px;
     padding : 4px 12px 4px 12px;
     margin : 5px;
+
 }
