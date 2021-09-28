@@ -103,7 +103,7 @@ section p {
 }
 .desc {
     max-height : 175px;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 section .imgwrapper {
