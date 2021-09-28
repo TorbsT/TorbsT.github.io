@@ -4,6 +4,8 @@ var htmlLabel = { text:"HTML", bgcolor: "red"};
 var jsLabel = { text:"JS", bgcolor: "orange", full:"JavaScript"};
 var cssLabel = { text:"CSS", bgcolor: "green"};
 var javaLabel = { text:"Java", bgcolor:"red"};
+var mcLabel = {text:"MC", bgcolor:"green", full:"Minecraft"};
+var cmdblockLabel = {text:"Command blocks", bgcolor:"magenta"};
 
 var projects =
 [
@@ -26,6 +28,15 @@ var projects =
         endyear:2021,
         labels:[javaLabel],
         gitlab:"https://gitlab.stud.idi.ntnu.no/it1901/groups-2021/gr2137/gr2137",
+        width:900
+    },
+    {
+        title:"<h2>The maze runner</h2>",
+        desc:"<p>One of my first large projects. This adventure map in Minecraft is based on the popular franchise with the same name.</p><p>I have since release lost access to the world files, which gave me a good reason to learn Git.</p>",
+        img:"imgs/mazeRunner.gif",
+        startyear:2015,
+        endyear:2016,
+        labels:[mcLabel, cmdblockLabel],
         width:900
     },
 
