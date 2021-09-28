@@ -150,3 +150,12 @@ img.centered {
     bottom : -38px;
     opacity: 1;
 }
+.labels {
+
+}
+.label {
+    display : inline-block;
+    border-radius: 10px;
+    padding : 4px 12px 4px 12px;
+    margin : 5px;
+}

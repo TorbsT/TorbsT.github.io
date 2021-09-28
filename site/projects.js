@@ -1,31 +1,51 @@
+var unityLabel = { text:"Unity", bgcolor: "purple"};
+var csharpLabel = { text:"C#", bgcolor: "#871F78"};
+var htmlLabel = { text:"HTML", bgcolor: "red"};
+var jsLabel = { text:"JS", bgcolor: "orange", full:"JavaScript"};
+var cssLabel = { text:"CSS", bgcolor: "green"};
+var javaLabel = { text:"Java", bgcolor:"red"};
+
 var projects =
 [
     {
         title:"<h2>Allied Abductees</h2>",
         desc:"<p>Submission for the 2021 GMTK game jam</p><p>Made in 48 hours with Unity and C# by a team of three.</p>",
         vid:"imgs/alliedabductees.mp4",
+        startyear:2021,
+        endyear:2021,
+        //labels:[unityLabel, csharpLabel],
         github:"https://github.com/TorbsT/AlliedAbductees",
         itch:"https://torbst.itch.io/allied-abductees",
         width:900
 
     },
     {
-        title:"<h1>O'Burger</h1>",
-        desc:"<p>Obama's very official burger website</p><p>Made with HTML, JS and CSS by a team of five. This was our project for the course IT2805 (2020).</p>",
-        img:"imgs/oburger.GIF",
-        github:"https://github.com/sindrimt/O-Burger",
-        webp:"https://folk.ntnu.no/torbjss/Documents/html/"
-    },
-    {
         title:"<h2>Memory game</h2>",
         desc:"<p>A memory game about matching pictures of various environments.</p><p>Made with Java by a team of two. This was our project for the course TDT4100 (2021).</p>",
         img:"imgs/memorygame.PNG",
+        startyear:2021,
+        endyear:2021,
+        labels:[javaLabel],
         gitlab:"https://gitlab.stud.idi.ntnu.no/tdt4100/v2021/student_projects/tdt4100-prosjekt-marcussn"
     },
+    {
+        title:"<h1>O'Burger</h1>",
+        desc:"<p>Obama's very official burger website</p><p>Made with HTML, JS and CSS by a team of five. This was our project for the course IT2805 (2020).</p>",
+        img:"imgs/oburger.GIF",
+        startyear:2020,
+        endyear:2020,
+        labels:[htmlLabel, jsLabel, cssLabel],
+        github:"https://github.com/sindrimt/O-Burger",
+        webp:"https://folk.ntnu.no/torbjss/Documents/html/"
+    },
+
     {
         title:"<h1>(WIP) Frontegy</h1>",
         desc:"<p>Chess with a twist</p><p>Made in Unity/C# by me. This project is largely a sandbox for me to experiment with different code structures (2020-present).</p>",
         img:"imgs/frontegy.PNG",
+        startyear:2020,
+        //endyear:current
+        //labels:[unityLabel, csharpLabel],
         github:"https://github.com/TorbsT/Frontegy"
     },
 
@@ -34,6 +54,8 @@ var projects =
         title:"<h1>a very long title i made in order to see how the sections behave when the text becomes too word-y</h1>",
         desc:"<p>an even longerer description because more space is allocated to it. Including this fact, description text is also smaller, making overall possible word count even bigger. However, I am trying my best to exceed this word count limit. As you can probably tell, my strategy consists mostly of spouting out random sentences without actually getting anywhere. As a consequence of this, no message in particular is conveyed, and as such nobody learns anything useful.</p>",
         vid:"imgs/alliedabductees.mp4",
+        startyear:200,
+        endyear:200,
         github:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
 ];
@@ -55,6 +77,19 @@ function addProjects() {
 
         var contentEL = document.createElement("div");
         contentEL.className = "content half";
+
+        if (true) {
+        var labelsEL = document.createElement("div");
+        labelsEL.className = "labels";
+        if (project.labels != null) {
+            console.log(project.title + " has project label");
+            for (var i = 0; i < project.labels.length; i++) {
+                var label = project.labels[i];
+                addLabel(labelsEL, label);
+            }
+        }
+
+        }
 
         var flexyEL = document.createElement("div");
         flexyEL.className = "flexy";
@@ -111,6 +146,7 @@ function addProjects() {
 
         linksWrapperEL.appendChild(linksEL);
         flexyEL.appendChild(txtEL);
+        flexyEL.appendChild(labelsEL);
         flexyEL.appendChild(linksWrapperEL);
         contentEL.appendChild(flexyEL);
 
@@ -162,5 +198,26 @@ function minimizevid(e) {
     var sectionEL = vidEL.parentElement.parentElement;
     //sectionEL.style.width = "100%";
 }
-
+function sortByStartYear() {
+    projects = projects.sort(function(a, b){ return b.startyear-a.startyear});
+}
+function sortByEndYear() {
+    projects = projects.sort(function(a, b) { 
+        if (b.endyear == null) return 1;
+        if (a.endyear == null) return -1;
+        return b.endyear-a.endyear;
+    });
+}
+function addLabel(el, label) {
+    console.log("Processing "+label.text);
+    var labEL = document.createElement("div");
+    labEL.className = "label";
+    labEL.innerText = label.text;
+    labEL.style.backgroundColor = label.bgcolor;
+    labEL.style.color = "white";
+    el.appendChild(labEL);
+}
+console.log(projects);
+//sortByEndYear();
+console.log(projects);
 addProjects();
