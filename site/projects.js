@@ -270,6 +270,10 @@ function addLabel(el, label) {
     labEL.innerText = label.text;
     labEL.style.backgroundColor = label.bgcolor;
     labEL.style.color = "white";
+    
+    if (label.full != null) labEL.title = label.full;
+    else labEL.title = label.text;
+
     el.appendChild(labEL);
 }
 console.log(projects);
