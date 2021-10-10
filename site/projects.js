@@ -21,6 +21,15 @@ var projects =
     },
     */
     {
+        title:"<h1>Talgdat</h1>",
+        desc:"<p>Bottom text Bottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom text</p>",
+        img:"imgs/talgdat.png",
+        startyear:2021,
+        endyear:2021,
+        labels:[csharpLabel, unityLabel],
+        github:"https://github.com/TorbsT/Talgdat"
+    },
+    {
         title:"<h2>O'Burger: Barackening</h2>",
         desc:"<p>App for ordering food from O'Burger</p><p>A continuation of the legendary O'Burger series, which now supports sending and retrieving orders on an external server.</p><p>This was our project for the course IT1901. Made by a team of four practicing agile development.</p>",
         img:"imgs/barackening.png",
@@ -77,7 +86,7 @@ var projects =
         desc:"<p>A mix of chess and poker</p><p>Made in Unity/C# by me. This project is largely a sandbox for me to experiment with different code structures (2020-present).</p>",
         img:"imgs/frontegy.PNG",
         startyear:2020,
-        //endyear:current
+        endyear:2021,
         labels:[unityLabel, csharpLabel],
         github:"https://github.com/TorbsT/Frontegy"
     }
