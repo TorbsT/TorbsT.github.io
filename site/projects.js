@@ -23,7 +23,7 @@ var projects =
     {
         title:"<h1>Talgdat</h1>",
         desc:"<p>Bottom text Bottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom text</p>",
-        img:"imgs/talgdat.png",
+        vid:"imgs/talgdat.mp4",
         startyear:2021,
         endyear:2021,
         labels:[csharpLabel, unityLabel],
@@ -32,7 +32,7 @@ var projects =
     {
         title:"<h2>O'Burger: Barackening</h2>",
         desc:"<p>App for ordering food from O'Burger</p><p>A continuation of the legendary O'Burger series, which now supports sending and retrieving orders on an external server.</p><p>This was our project for the course IT1901. Made by a team of four practicing agile development.</p>",
-        img:"imgs/barackening.png",
+        img:"imgs/oburger-barackening.png",
         startyear:2021,
         endyear:2021,
         labels:[javaLabel],
