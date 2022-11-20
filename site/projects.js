@@ -1,4 +1,5 @@
 var unityLabel = { text:"Unity", bgcolor: "purple"};
+var gddLabel = { text:"GDD", bgcolor: "purple", full:"Game Design Document"};
 var csharpLabel = { text:"C#", bgcolor: "#871F78"};
 var htmlLabel = { text:"HTML", bgcolor: "red"};
 var jsLabel = { text:"JS", bgcolor: "orange", full:"JavaScript"};
@@ -20,6 +21,54 @@ var projects =
         github:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     */
+    {
+        title:"<h1>TorbuTils</h1>",
+        desc:"<p> LALALALAL LALALALALAL ALLALA LLALALAL LALAL LAL ALL ALLL ALL ALL ALLL</p>",
+        img:"imgs/dishwish.png",
+    },
+    {
+        title:"<h2>Battle for Hermannia</h2>",
+        desc:"<p> LALALALAL LALALALALAL ALLALA LLALALAL LALAL LAL ALL ALLL ALL ALL ALLL</p>",
+        img:"imgs/bfh.png",
+    },
+    {
+        title:"<h1>Tech Through Time</h1>",
+        desc:"<p> LALALALAL LALALALALAL ALLALA LLALALAL LALAL LAL ALL ALLL ALL ALL ALLL</p>",
+        img:"imgs/dishwish.png",
+        labels:[gddLabel],
+    },
+    {
+        title:"<h1>FitFighter</h1>",
+        desc:"<p> LALALALAL LALALALALAL ALLALA LLALALAL LALAL LAL ALL ALLL ALL ALL ALLL</p>",
+        img:"imgs/dishwish.png",
+        labels:[gddLabel],
+    },
+    {
+        title:"<h1>GamerMeet</h1>",
+        desc:"<p> LALALALAL LALALALALAL ALLALA LLALALAL LALAL LAL ALL ALLL ALL ALL ALLL</p>",
+        img:"imgs/dishwish.png",
+        labels:[gddLabel],
+    },
+    {
+        title:"<h1>Hexaphobia</h1>",
+        desc:"<p> LALALALAL LALALALALAL ALLALA LLALALAL LALAL LAL ALL ALLL ALL ALL ALLL</p>",
+        img:"imgs/hexaphobia.png",
+        startyear:2001,
+    },
+    {
+        title:"<h1>Tiss</h1>",
+        desc:"<p> LALALALAL LALALALALAL ALLALA LLALALAL LALAL LAL ALL ALLL ALL ALL ALLL</p>",
+        youtube:"https://www.youtube.com/embed/5fmsrvn3kyU"
+    },
+    {
+        title:"<h1>DishWish</h1>",
+        startyear:2022,
+        endyear:2022,
+        desc:"<p>LLLLLLLLLLLLLLLLL LLLLLLLLLLLLLLLLLLL LLLLLLLLLLLLLLLLLLLLLLLLLLLL LLLLLLLLLLLLLLLLLLLLLLLL</p>",
+        img:"imgs/dishwish.png",
+        gitlab:"https://gitlab.stud.idi.ntnu.no/tdt4140-2022/landsby-3/40/dishwish",
+        webp:"https://dishwish.herokuapp.com"
+    },
     {
         title:"<h1>Talgdat</h1>",
         desc:"<p>Bottom text Bottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom textBottom text</p>",
@@ -94,6 +143,74 @@ var projects =
 var alwaysPlay = true;
 var wrapperEL = document.getElementById("projectswrapper");
 
+var projectELs = [];
+var searchEL = document.getElementById("search");
+var searchModeEL = document.getElementById("searchmode");
+var searchHelpEL = document.getElementById("searchhelp");
+var searchHelpTxtEL = document.getElementById("searchhelptxt");
+searchHelpEL.addEventListener("mouseenter", showSearchHelp);
+searchHelpEL.addEventListener("mouseleave", hideSearchHelp);
+searchEL.addEventListener("input", search);
+searchModeEL.addEventListener("click", search);
+
+function search(event) {
+    var input = searchEL.value;
+    query = input.split(",");
+    console.log(query);
+    var union = searchModeEL.checked;
+    for (var i = 0; i < projects.length; i++) {
+        var matchProject = false;
+        var projectEL = projectELs[i];
+        var project = projects[i];
+        for (var j = 0; j < query.length; j++) {
+            var match = matchSentence(project, query[j]);
+            if (union && match) {
+                matchProject = true;
+                break;
+            }
+            if (!union && !match) {
+                break;
+            }
+            if (!union && match && j == query.length-1) matchProject = true;
+        }
+
+        if (matchProject) projectEL.style.display = "block";
+        else projectEL.style.display = "none";
+    }
+    function matchSentence(project, sentence) {
+        sentence = sentence.trim().toLowerCase();
+        if (project.title && project.title.toLowerCase().includes(sentence)) return true;
+        if (project.itch && "itch.io".includes(sentence)) return true;
+        if (project.github && "github".includes(sentence)) return true;
+        if (project.gitlab && "gitlab".includes(sentence)) return true;
+        if (project.labels) {
+            for (var i = 0; i < project.labels.length; i++) {
+                var lbl = project.labels[i];
+                if (lbl.text && lbl.text.toLowerCase().includes(sentence)) return true;
+                if (lbl.full && lbl.full.toLowerCase().includes(sentence)) return true;
+            }
+        }
+        if (project.desc && project.desc.toLowerCase().includes(sentence)) return true; 
+        if (project.startyear) {
+            var currentYear = new Date().getFullYear();
+            var fromYear = parseInt(project.startyear);
+            var toYear;
+            if (project.endyear) toYear = parseInt(project.endyear);
+            else toYear = currentYear;
+
+            for (var i = fromYear; i < toYear+1; i++) {
+                if (i.toString().includes(sentence)) return true;
+            }
+        }
+        return false;
+    }
+}
+function showSearchHelp() {
+    searchHelpTxtEL.style.display = "block";
+}
+function hideSearchHelp() {
+    searchHelpTxtEL.style.display = "none";
+}
 
 function addProjects() {
     for (var i = 0; i < projects.length; i++) {
@@ -163,7 +280,7 @@ function addProjects() {
                 }
             }
     
-            }
+        }
 
 
         var linksWrapperEL = document.createElement("div");
@@ -203,6 +320,17 @@ function addProjects() {
             }
             imgWrapperEL.appendChild(vidEL);
         }
+        else if (project.youtube) {
+            var iframeEL = document.createElement("iframe");
+            iframeEL.src = project.youtube;
+            iframeEL.width = "540";
+            iframeEL.height = "300";
+            iframeEL.frameborder = "0";
+            iframeEL.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+            iframeEL.style.border = "none";
+            iframeEL.allowFullscreen;
+            imgWrapperEL.appendChild(iframeEL);
+        }
         
         descEL.appendChild(labelsEL);
         descEL.appendChild(descTextEL);
@@ -216,6 +344,7 @@ function addProjects() {
 
         sectionEL.appendChild(contentEL);
         sectionEL.appendChild(imgWrapperEL);
+        projectELs.push(sectionEL);
         wrapperEL.appendChild(sectionEL);
     }
 }

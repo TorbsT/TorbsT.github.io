@@ -19,7 +19,25 @@
     <nav></nav>
     <article class="bg">
         <article class="fg">
-            <h1 class="centered">Projects I have participated in</h1>
+            <h1 class="centered">Search among projects I have participated in</h1>
+            <div class="centered">
+                <input type="text" id="search" placeholder="Search for titles, languages, keywords...">
+                <label class="searchlabel">
+                    <input type="checkbox" id="searchmode" checked>
+                    <span class="checkmark"></span>
+                    <span class="pad">Inclusive search</span>
+                </label>
+                <div id="searchhelpwrapper" class="centered">
+                    <a id="searchhelp">How does searching work?</a>
+                    <div id="searchhelptxt">
+                        <p>You can search for project titles, programming languages/tools, years, descriptions, as well as availability on other sites.
+                            <br>Example: "Abductees, Unity, 2021, game jam, github, itch.io"</p>
+                        <p>Criteria are separated using comma.
+                            <br>Inclusive search displays projects that include ANY of the criteria.
+                            <br>Non-inclusive search displays projects that include ALL of the criteria.</p>
+                    </div>
+                </div>
+            </div>
             <article id="projectswrapper" class="scrollParent">
                 <!--
         <section class="unselectable lightmode" href="https://folk.ntnu.no/torbjss/Documents/html/">

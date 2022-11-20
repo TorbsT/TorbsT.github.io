@@ -15,10 +15,9 @@ section {
     transition :cubic-bezier(0, 1, 0.5, 1);
     transition-duration: 0.4s;
     opacity: 1;
+    box-shadow: black 1px 1px 5px;
 }
-section:hover {
 
-}
 section .half {
     vertical-align: top;
     
@@ -161,4 +160,122 @@ img.centered {
     margin-left : 5px;
     font-size: 14px;
 
+}
+
+
+/* Search bar */
+input[type=text] {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 0px;
+    font-size: 20px;
+    background-color: #141421;
+    color : #FEFEFE;
+    margin-right: 10px;
+}
+.searchlabel {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    /*margin-bottom: 12px;*/
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.searchlabel input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 43px;
+    width: 43px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.searchlabel:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.searchlabel input:checked~.checkmark {
+    background-color: #24a44a;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.searchlabel input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.searchlabel .checkmark:after {
+    left: 16px;
+    top: 8px;
+    width: 8px;
+    height: 16px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.pad {
+
+    height: 43px;
+    padding : 10px;
+    padding-left: 20px;
+    /*background-color: red;*/
+}
+
+/*Search help*/
+#searchhelpwrapper {
+    position: relative;
+}
+#searchhelp {
+    
+    position: relative;
+    display: block;
+    cursor:pointer;
+    text-decoration: underline;
+    padding: 8px;
+    width: 200px;
+    position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+}
+#searchhelptxt {
+    
+    background-color: #FEFEFE;
+    color : black;
+    border-radius: 1px;
+    box-shadow: black 1px 1px 3px;
+    padding : 25px;
+    position: absolute;
+    display: none;
+    z-index: 100000;
+    width: 500px;
+    margin:auto;
+    left:0;
+    right: 0;
+    top: 80px;
+    font-size: 14px;
+    
 }
