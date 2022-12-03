@@ -146,7 +146,7 @@ var projects =
     {
         title:"<h1>O'Burger</h1>",
         desc:"<p>Obama's <i>very</i> official burger website</p><p>Made with HTML, JS and CSS by a team of five. This was our project for the course IT2805 (2020).</p>",
-        img:"imgs/oburger.GIF",
+        img:"imgs/oburger.gif",
         startyear:2020,
         endyear:2020,
         labels:[htmlLabel, jsLabel, cssLabel, releasedLabel, teamLabel],
