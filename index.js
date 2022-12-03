@@ -393,11 +393,11 @@ function addProjects() {
         linksWrapperEL.className = "linkswrapper";
 
         var linksEL = document.createElement("ul");
-        if (project.webp) linksEL.appendChild(addLink("imgs/webp.PNG", project.webp, "Visit webpage"));
-        if (project.pdf) linksEL.appendChild(addLink("imgs/pdf.PNG", project.pdf, "View PDF"));
-        if (project.itch) linksEL.appendChild(addLink("imgs/itch.PNG", project.itch, "View submission on itch.io"));
-        if (project.github) linksEL.appendChild(addLink("imgs/github.PNG", project.github, "View source code on Github"));
-        if (project.gitlab) linksEL.appendChild(addLink("imgs/gitlab.PNG", project.gitlab, "View source code on Gitlab"));
+        if (project.webp) linksEL.appendChild(addLink("imgs/webp.png", project.webp, "Visit webpage"));
+        if (project.pdf) linksEL.appendChild(addLink("imgs/pdf.png", project.pdf, "View PDF"));
+        if (project.itch) linksEL.appendChild(addLink("imgs/itch.png", project.itch, "View submission on itch.io"));
+        if (project.github) linksEL.appendChild(addLink("imgs/github.png", project.github, "View source code on Github"));
+        if (project.gitlab) linksEL.appendChild(addLink("imgs/gitlab.png", project.gitlab, "View source code on Gitlab"));
         
 
         var imgWrapperEL = document.createElement("div");
@@ -463,7 +463,7 @@ function addLink(img, link, tooltip) {
     imgTextEL.className = "tooltiptext";
     imgTextEL.innerText = tooltip;
     imgEL.src = img;
-    imgEL.alt = tooltip;
+    imgEL.alt = "link";
 
     anchorEL.className = "tooltip unselectable";
 
