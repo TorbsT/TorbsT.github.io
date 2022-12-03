@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Torbsite | Projects</title>
+    <link rel="stylesheet" type="text/css" href="global.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <header class="scrollParent unselectable hiddenOverflow">
+        <img class="scroll" src="imgs/bdayart.jpg" data-doscrolly="true" data-scrollscalary="0.7"
+            data-scrollanchorbottom="true">
+        
+        </img>
+        <!--scroll-->
+        <div id="headertxt" class="scroll" data-doscrolly="true" data-scrollscalary="1" data-doscrollx="true" data-scrollscalarx="-2">
+            <h2>Projects</h2>
+        </div>
+        <!--headertxt-->
+    </header>
+    <nav></nav>
+    <article class="bg">
+        <article class="fg">
+            <h1 class="centered">Search among projects I have participated in</h1>
+            <div class="centered">
+                <input type="text" id="search" placeholder="Search for titles, languages, keywords..." value="">
+                <label class="searchlabel">
+                    <input type="checkbox" id="searchmode">
+                    <span class="checkmark"></span>
+                    <span class="pad">Inclusive search</span>
+                </label>
+                <div id="searchhelpwrapper" class="centered">
+                    <a id="searchhelp">How does searching work?</a>
+                    <div id="searchhelptxt">
+                        <p>You can search for project titles, programming languages/tools, years, descriptions, as well as availability on other sites.
+                            <br>Example: "abductees, unity, 2021, game jam, github, itch, released, -team"</p>
+                        <p>Criteria are separated using comma.
+                            <br>Inclusive search will show projects that satify ANY of the criteria.
+                            <br>Non-inclusive search will show projects that satisfy ALL of the criteria.
+                            <br>Putting a dash "-" in the start of a criterium specifies it should NOT be satisfied.</p>
+                    </div>
+                </div>
+            </div>
+            <h1 class="centered" id="foundprojects">ÆÆÆÆÆÆÆÆ</h1>
+            <article id="projectswrapper" class="scrollParent">
+                <!--
+        <section class="unselectable lightmode" href="https://folk.ntnu.no/torbjss/Documents/html/">
+            <div class="content">
+                <h1>O'Burger</h1>
+                <hr>
+                <p>Obama's official burger website</p>
+                <p>Made with HTML, JS and CSS</p>
+            </div><div><img src="imgs/oburger.PNG"/></div>
+        </section>
+        <section class="unselectable lightmode">
+            <a href="https://torbst.itch.io/allied-abductees" target="_blank"><div class="content">
+                <h1>Allied Abductees</h1>
+                <hr>
+                <p>Submission for the 2021 GMTK game jam</p>
+                <p>Made with Unity and C#</p>
+            </div><div><img src="imgs/alliedAbductees.PNG"/></div></a>
+        </section>
+    </article>
+    -->
+            </article>
+        </article>
+</body>
+
+<script src="nav.js"></script>
+<script src="index.js"></script>  <!--must be before scroll-->
+<script src="scroll.js"></script>
+
+</html>

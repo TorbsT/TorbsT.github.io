@@ -31,10 +31,10 @@ article.fg {
 nav {
     background-color: #111121;
     position : sticky;
-    height : 12vh;
-    font-size : 6vh;
+    height : 8vh;
+    font-size : 4vh;
     opacity : 1;
-    box-shadow : 0vh -12vh 24vh 24vh rgba(10, 10, 10, 0.7);
+    box-shadow : 0vh -12vh 24vh 24vh rgba(10, 10, 10, 0.5);
     z-index: 1000;
 }
 nav ul {
@@ -78,10 +78,11 @@ header {
 #headertxt {
     position: absolute;
     z-index : inherit;
-    left : 15vw;
+    left : 10%;
     top : 15px;  /* NOTE: MODIFIES iY OF SCROLL.JS, MEANING ONLY INITIAL TOP*/
     
-    font-size: 100px;  /* -> height */
+    font-size: 75px;  /* -> height */
+    line-height: 10px;
     text-shadow : #030303 4px 4px 0px;
     max-width : 100%;
 }
