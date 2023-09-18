@@ -16,6 +16,14 @@ var soloLabel = {text:"Solo", bgcolor:"purple", full:"Made only by TorbsT"};
 var jamLabel = {text:"Game jam", bgcolor:"red", full:"Made in a game jam"};
 var sdLabel = {text:"Stable diffusion", bgcolor:"blue", full:"Made using stable diffusion (AI)"};
 var firebaseLabel = {text:"Firebase", bgcolor:"orange", full:"Made using firebase"};
+var rustLabel = {text:"Rust", bgcolor:"orange"};
+
+var githubLink = {text:"View source code on Github", img:"imgs/github.png"};
+var gitlabLink = {text:"View source code on Github", img:"imgs/gitlab.png"};
+var webpLink = {text:"Visit webpage", img:"imgs/webp.png"};
+var pdfLink = {text:"View PDF", img:"imgs/pdf.png"};
+var itchLink = {text:"Play", img:"imgs/itch.png"};
+var playLink = {text:"Play", img:"imgs/play.png"};
 
 var projects =
 [
@@ -31,10 +39,24 @@ var projects =
     },
     */
     {
+        title:"<h2>Sintef's traffic game</h2>",
+        desc:"<p>Online multiplayer traffic orchestration game made at the request of Sintef.</p><p>This is the result of my bachelor project.</p>",
+        img:"imgs/sintefdigitalboardgame.png",
+        startyear:2023,
+        endyear:2023,
+        labels:[unityLabel, csharpLabel, rustLabel, releasedLabel],
+        links:[
+            //{template:playLink, link:"http://boardgame.opendatalab.no"},
+            {template:pdfLink, link:"imgs/IT2901___Sintef_Digital_Board_Game.pdf"},
+            {template:githubLink, text:"View source code on Github (Client)", link:"https://github.com/TorbsT/SintefDigital_boardGame_client"},
+            {template:githubLink, text:"View source code on Github (Server)", link:"https://github.com/TorbsT/SintefDigital_boardGame_server"},
+        ]
+    },
+    {
         title:"<h1>TorbuTils</h1>",
         desc:"<p>Utilities package for Unity. Includes functionality for graphs, noise generation, animations, and object pooling.</p>",
         img:"imgs/torbutils.png",
-        github:"https://github.com/TorbsT/Torbutils",
+        links: [{template:githubLink, link:"https://github.com/TorbsT/Torbutils"}],
         labels:[unityLabel, csharpLabel, releasedLabel, soloLabel],
         startyear:2021,
     },
@@ -42,7 +64,7 @@ var projects =
         title:"<h2>Battle for Hermannia</h2>",
         desc:"<p>Turn-based strategy game. Based on the board game with the same name. Made in collaboration with Immerse NTNU.</p>",
         img:"imgs/bfh.png",
-        github:"https://github.com/immerse-ntnu/bfh-client",
+        links: [{template:githubLink, link:"https://github.com/immerse-ntnu/bfh-client"}],
         labels:[unityLabel, csharpLabel, wipLabel, teamLabel],
         startyear:2022,
     },
@@ -51,7 +73,7 @@ var projects =
         desc:"<p>Tech Through Time is a design concept for a learning game. The idea is to progress through different eras while learning how to make real-world technology.</p>",
         youtube:"https://www.youtube.com/embed/McMZpKEG3_A",
         labels:[gddLabel, releasedLabel, teamLabel],
-        pdf:"imgs/techthroughtime.pdf",
+        links: [{template:pdfLink, link:"imgs/techthroughtime.pdf"}],
         startyear:2022,
         endyear:2022,
     },
@@ -60,7 +82,7 @@ var projects =
         desc:"<p>Concept for an exergame. Players fight in one-on-one virtual boxing matches, and the one with better speed and skill wins. The game features pre-match warmups and post-match briefs to improve performance and health.</p>",
         youtube:"https://www.youtube.com/embed/rmNXm5p2Uu8",
         labels:[gddLabel, releasedLabel, teamLabel],
-        pdf:"imgs/fitfighter.pdf",
+        links: [{template:pdfLink, link:"imgs/fitfighter.pdf"}],
         startyear:2022,
         endyear:2022,
     },
@@ -69,7 +91,7 @@ var projects =
         desc:"<p>Game design document providing an idea for gamifying social interaction. Users get rewards in partnered video games when completing challenges in the GamerMeet app. Challenges are powered by machine learning which helps people start socializing at a reasonable pace.</p>",
         youtube:"https://www.youtube.com/embed/x0e2AxPa-KE",
         labels:[gddLabel, releasedLabel, teamLabel, sdLabel],
-        pdf:"imgs/gamermeet.pdf",
+        links: [{template:pdfLink, link:"imgs/gamermeet.pdf"}],
         startyear:2022,
         endyear:2022,
     },
@@ -80,8 +102,10 @@ var projects =
         labels:[unityLabel, csharpLabel, releasedLabel, soloLabel, jamLabel],
         startyear:2022,
         endyear:2022,
-        github:"https://github.com/TorbsT/Hexaphobia",
-        itch:"https://torbst.itch.io/hexaphobia",
+        links: [
+            {template:githubLink, link:"https://github.com/TorbsT/Hexaphobia"},
+            {template:itchLink, link:"https://torbst.itch.io/hexaphobia"}
+        ],
     },
     {
         title:"<h1>Tiss</h1>",
@@ -90,8 +114,10 @@ var projects =
         labels:[unityLabel, csharpLabel, releasedLabel, soloLabel],
         startyear:2022,
         endyear:2022,
-        github:"https://github.com/TorbsT/Tiss",
-        itch:"https://torbst.itch.io/tiss",
+        links: [
+            {template:githubLink, link:"https://github.com/TorbsT/Tiss"},
+            {template:itchLink, link:"https://torbst.itch.io/tiss"}
+        ],
     },
     {
         title:"<h1>DishWish</h1>",
@@ -100,8 +126,10 @@ var projects =
         endyear:2022,
         desc:"<p>A website for finding and sharing cooking recipes. Uses React, Firebase, and authentication through Google. Created by a diverse team practising agile development.</p>",
         img:"imgs/dishwish.png",
-        gitlab:"https://gitlab.stud.idi.ntnu.no/tdt4140-2022/landsby-3/40/dishwish",
-        webp:"https://dishwish.herokuapp.com"
+        links: [
+            {template:gitlabLink, link:"https://gitlab.stud.idi.ntnu.no/tdt4140-2022/landsby-3/40/dishwish"},
+            {template:webpLink, link:"https://dishwish.herokuapp.com"}
+        ]
     },
     {
         title:"<h1>Talgdat</h1>",
@@ -110,7 +138,7 @@ var projects =
         startyear:2021,
         endyear:2021,
         labels:[csharpLabel, unityLabel, releasedLabel, soloLabel],
-        github:"https://github.com/TorbsT/Talgdat"
+        links: [{template:githubLink, link:"https://github.com/TorbsT/Talgdat"}]
     },
     {
         title:"<h2>O'Burger: Barackening</h2>",
@@ -119,7 +147,7 @@ var projects =
         startyear:2021,
         endyear:2021,
         labels:[javaLabel, releasedLabel, teamLabel],
-        gitlab:"https://gitlab.stud.idi.ntnu.no/it1901/groups-2021/gr2137/gr2137",
+        links: [{template:gitlabLink, link:"https://gitlab.stud.idi.ntnu.no/it1901/groups-2021/gr2137/gr2137"}],
         width:900
     },
     {
@@ -129,10 +157,11 @@ var projects =
         startyear:2021,
         endyear:2021,
         labels:[unityLabel, csharpLabel, releasedLabel, teamLabel, jamLabel],
-        github:"https://github.com/TorbsT/AlliedAbductees",
-        itch:"https://torbst.itch.io/allied-abductees",
+        links:[
+            {template:githubLink, link:"https://github.com/TorbsT/AlliedAbductees"},
+            {template:itchLink, link:"https://torbst.itch.io/allied-abductees"}
+        ],
         width:900
-
     },
     {
         title:"<h2>Memory game</h2>",
@@ -141,7 +170,7 @@ var projects =
         startyear:2021,
         endyear:2021,
         labels:[javaLabel, teamLabel],
-        gitlab:"https://gitlab.stud.idi.ntnu.no/tdt4100/v2021/student_projects/tdt4100-prosjekt-marcussn"
+        links: [{template:gitlabLink, link:"https://gitlab.stud.idi.ntnu.no/tdt4100/v2021/student_projects/tdt4100-prosjekt-marcussn"}]
     },
     {
         title:"<h1>O'Burger</h1>",
@@ -150,8 +179,10 @@ var projects =
         startyear:2020,
         endyear:2020,
         labels:[htmlLabel, jsLabel, cssLabel, releasedLabel, teamLabel],
-        github:"https://github.com/sindrimt/O-Burger",
-        webp:"https://folk.ntnu.no/torbjss/Documents/html/"
+        links:[
+            {template:githubLink, link:"https://github.com/sindrimt/O-Burger"},
+            {template:webpLink, link:"https://folk.ntnu.no/torbjss/Documents/html/"}
+        ]
     },
 
     {
@@ -181,7 +212,7 @@ var projects =
         startyear:2020,
         endyear:2021,
         labels:[unityLabel, csharpLabel, soloLabel],
-        github:"https://github.com/TorbsT/Frontegy"
+        links:[{template:githubLink, link:"https://github.com/TorbsT/Frontegy"}]
     }
 ];
 var alwaysPlay = true;
@@ -393,11 +424,13 @@ function addProjects() {
         linksWrapperEL.className = "linkswrapper";
 
         var linksEL = document.createElement("ul");
-        if (project.webp) linksEL.appendChild(addLink("imgs/webp.png", project.webp, "Visit webpage"));
-        if (project.pdf) linksEL.appendChild(addLink("imgs/pdf.png", project.pdf, "View PDF"));
-        if (project.itch) linksEL.appendChild(addLink("imgs/itch.png", project.itch, "View submission on itch.io"));
-        if (project.github) linksEL.appendChild(addLink("imgs/github.png", project.github, "View source code on Github"));
-        if (project.gitlab) linksEL.appendChild(addLink("imgs/gitlab.png", project.gitlab, "View source code on Gitlab"));
+        if (project.links)
+        for (var j = 0; j < project.links.length; j++) {
+            let link = project.links[j];
+            let img = getLinkProperty(link, "img");
+            let text = getLinkProperty(link, "text");
+            linksEL.appendChild(addLink(img, link.link, text));
+        }
         
 
         var imgWrapperEL = document.createElement("div");
@@ -454,6 +487,13 @@ function addProjects() {
         projectELs.push(sectionEL);
         wrapperEL.appendChild(sectionEL);
     }
+}
+function getLinkProperty(link, propertyName) {
+    if (link[propertyName])
+        return link[propertyName];
+    if (link.template)
+        return getLinkProperty(link.template, propertyName);
+    return undefined;
 }
 function addLink(img, link, tooltip) {
     var liEL = document.createElement("li");
@@ -519,8 +559,6 @@ function addLabel(el, label) {
     
     el.appendChild(labEL);
 }
-console.log(projects);
-sortByEndYear();
-console.log(projects);
+//sortByEndYear();
 addProjects();
 search();  // Update "found X projects"
