@@ -8,26 +8,41 @@
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
-<body>
-    <header class="scrollParent unselectable hiddenOverflow">
+<body class="dark">
+    <header class="scrollParent unselectable hiddenOverflow sillyhide">
         <img class="scroll" src="imgs/bdayart.jpg" data-doscrolly="true" data-scrollscalary="0.7"
             data-scrollanchorbottom="true">
-        
         </img>
         <!--scroll-->
-        <div id="headertxt" class="scroll" data-doscrolly="true" data-scrollscalary="1" data-doscrollx="true" data-scrollscalarx="-2">
+        <div id="headertxt" class="scroll" data-doscrolly="true" data-scrollscalary="1">
             <h2>Projects</h2>
         </div>
         <!--headertxt-->
     </header>
+    <header class="scrollParent unselectable hiddenOverflow sillyshow">
+        <img class="scroll" src="imgs/melonman.jpg" data-doscrolly="false"
+            data-scrollanchorbottom="true">
+        </img>
+        <!--scroll-->
+        <div id="headertxt" class="scroll" data-doscrolly="true" data-scrollscalary="1">
+            <h3>Watashi no projecto!!!</h3>
+        </div>
+        <!--headertxt-->
+    </header>
     <nav></nav>
-    <article class="bg">
-        <article class="fg">
-            <h1 class="centered">Search among projects I have participated in</h1>
-            <div class="centered">
+    <article class="bg dark">
+        <div id="theme"></div>
+        <article class="fg dark">
+            <h1 class="centered">Search among ¤projects I have participated in</h1>
+            <div class="sillyshow">
+                <h1>sorry, the search function doesnt work right now :( i know yall like it so much so i will do my best to fix it as soon as ASAP.</h1>
+                <button>plz fix button!!!</button>
+                <img src="imgs/sorrygif.gif" style="position: absolute;">
+            </div>
+            <div class="centered sillyhide">
                 <input type="text" id="search" placeholder="Search for titles, languages, keywords..." value="">
                 <label class="searchlabel">
-                    <input type="checkbox" id="searchmode">
+                    <input type="checkbox" id="searchmode" class="dark">
                     <span class="checkmark"></span>
                     <span class="pad">Inclusive search</span>
                 </label>
@@ -43,8 +58,16 @@
                     </div>
                 </div>
             </div>
-            <h1 class="centered" id="foundprojects">ÆÆÆÆÆÆÆÆ</h1>
-            <article id="projectswrapper" class="scrollParent">
+
+            <h1 class="centered" id="foundprojects"></h1>
+            <div class="sillyshow" style="position:absolute;z-index: 2000;">
+                <marquee scrollamount="50">look at this cool effect I found!!! isn't it just TOTALLY RAD??</marquee>
+                <marquee scrollamount="80">it can even go faster!!</marquee>
+                <marquee scrollamount="100">is there no limit to this thing???</marquee>
+                <marquee scrollamount="120">we're reaching speeds previously thought to be AWESOME!!!!</marquee>
+                <marquee scrollamount="200">wowowowowowowowowowow!!!!!</marquee>
+            </div>
+            <article id="projectswrapper" class="scrollParent dark">
                 <!--
         <section class="unselectable lightmode" href="https://folk.ntnu.no/torbjss/Documents/html/">
             <div class="content">
@@ -71,5 +94,5 @@
 <script src="nav.js"></script>
 <script src="index.js"></script>  <!--must be before scroll-->
 <script src="scroll.js"></script>
-
+<script src="theme.js"></script>
 </html>

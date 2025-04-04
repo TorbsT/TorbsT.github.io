@@ -1,3 +1,13 @@
+var sillyShitChance = 0.3;
+var sillyshits =
+[
+    "But that's not all. Take a look at this ¤project too.",
+    "This one is one of my favorites.",
+    "Don't forget about this ¤project.",
+    "FEATURED.."
+];
+
+
 var unityLabel = { text:"Unity", bgcolor: "purple"};
 var gddLabel = { text:"GDD", bgcolor: "purple", full:"Game Design Document"};
 var csharpLabel = { text:"C#", bgcolor: "#871F78"};
@@ -18,12 +28,13 @@ var sdLabel = {text:"Stable diffusion", bgcolor:"blue", full:"Made using stable 
 var firebaseLabel = {text:"Firebase", bgcolor:"orange", full:"Made using firebase"};
 var rustLabel = {text:"Rust", bgcolor:"orange"};
 
-var githubLink = {text:"View source code on Github", img:"imgs/github.png"};
-var gitlabLink = {text:"View source code on Github", img:"imgs/gitlab.png"};
-var webpLink = {text:"Visit webpage", img:"imgs/webp.png"};
-var pdfLink = {text:"View PDF", img:"imgs/pdf.png"};
+var githubLink = {text:"View ¤source code on Github", img:"imgs/github.png"};
+var gitlabLink = {text:"View ¤source code on Github", img:"imgs/gitlab.png"};
+var webpLink = {text:"Visit ¤webpage", img:"imgs/webp.png"};
+var pdfLink = {text:"View ¤PDF", img:"imgs/pdf.png"};
 var itchLink = {text:"Play", img:"imgs/itch.png"};
 var playLink = {text:"Play", img:"imgs/play.png"};
+
 
 var projects =
 [
@@ -39,8 +50,8 @@ var projects =
     },
     */
     {
-        title:"<h2>Sintef's traffic game</h2>",
-        desc:"<p>Online multiplayer traffic orchestration game made at the request of Sintef.</p><p>This is the result of my bachelor project.</p>",
+        title:"<h2>Sintef's ¤traffic game</h2>",
+        desc:"<p>Online multiplayer ¤traffic orchestration game made at the request of ¤Sintef.</p><p>This is the ¤result of my ¤bachelor project.</p>",
         img:"imgs/sintefdigitalboardgame.png",
         startyear:2023,
         endyear:2023,
@@ -48,13 +59,13 @@ var projects =
         links:[
             //{template:playLink, link:"http://boardgame.opendatalab.no"},
             {template:pdfLink, link:"imgs/IT2901___Sintef_Digital_Board_Game.pdf"},
-            {template:githubLink, text:"View source code on Github (Client)", link:"https://github.com/TorbsT/SintefDigital_boardGame_client"},
-            {template:githubLink, text:"View source code on Github (Server)", link:"https://github.com/TorbsT/SintefDigital_boardGame_server"},
+            {template:githubLink, text:"View ¤source code on Github (Client)", link:"https://github.com/TorbsT/SintefDigital_boardGame_client"},
+            {template:githubLink, text:"View ¤source code on Github (Server)", link:"https://github.com/TorbsT/SintefDigital_boardGame_server"},
         ]
     },
     {
         title:"<h1>TorbuTils</h1>",
-        desc:"<p>Utilities package for Unity. Includes functionality for graphs, noise generation, animations, and object pooling.</p>",
+        desc:"<p>Utilities package for Unity. Includes ¤functionality for ¤graphs, ¤noise generation, ¤animations, and ¤object pooling.</p>",
         img:"imgs/torbutils.png",
         links: [{template:githubLink, link:"https://github.com/TorbsT/Torbutils"}],
         labels:[unityLabel, csharpLabel, releasedLabel, soloLabel],
@@ -62,7 +73,7 @@ var projects =
     },
     {
         title:"<h2>Battle for Hermannia</h2>",
-        desc:"<p>Turn-based strategy game. Based on the board game with the same name. Made in collaboration with Immerse NTNU.</p>",
+        desc:"<p>Turn-based ¤strategy game. Based on the ¤board game with the same ¤name. Made in ¤collaboration with ¤Immerse NTNU.</p>",
         img:"imgs/bfh.png",
         links: [{template:githubLink, link:"https://github.com/immerse-ntnu/bfh-client"}],
         labels:[unityLabel, csharpLabel, wipLabel, teamLabel],
@@ -70,7 +81,7 @@ var projects =
     },
     {
         title:"<h1>Tech Through Time</h1>",
-        desc:"<p>Tech Through Time is a design concept for a learning game. The idea is to progress through different eras while learning how to make real-world technology.</p>",
+        desc:"<p>Tech Through Time is a ¤design concept for a ¤learning game. The ¤idea is to progress through different ¤eras while learning how to make real-world ¤technology.</p>",
         youtube:"https://www.youtube.com/embed/McMZpKEG3_A",
         labels:[gddLabel, releasedLabel, teamLabel],
         links: [{template:pdfLink, link:"imgs/techthroughtime.pdf"}],
@@ -79,7 +90,7 @@ var projects =
     },
     {
         title:"<h1>FitFighter</h1>",
-        desc:"<p>Concept for an exergame. Players fight in one-on-one virtual boxing matches, and the one with better speed and skill wins. The game features pre-match warmups and post-match briefs to improve performance and health.</p>",
+        desc:"<p>Concept for an exergame. Players fight in ¤one-on-one virtual boxing matches, and the one with better speed and skill wins. The ¤game features ¤pre-match warmups and ¤post-match briefs to improve performance and health.</p>",
         youtube:"https://www.youtube.com/embed/rmNXm5p2Uu8",
         labels:[gddLabel, releasedLabel, teamLabel],
         links: [{template:pdfLink, link:"imgs/fitfighter.pdf"}],
@@ -88,7 +99,7 @@ var projects =
     },
     {
         title:"<h1>GamerMeet</h1>",
-        desc:"<p>Game design document providing an idea for gamifying social interaction. Users get rewards in partnered video games when completing challenges in the GamerMeet app. Challenges are powered by machine learning which helps people start socializing at a reasonable pace.</p>",
+        desc:"<p>Game design document providing an ¤idea for gamifying ¤social interaction. Users get ¤rewards in partnered video games when completing ¤challenges in the ¤GamerMeet app. Challenges are powered by ¤machine learning which helps people start socializing at a reasonable pace.</p>",
         youtube:"https://www.youtube.com/embed/x0e2AxPa-KE",
         labels:[gddLabel, releasedLabel, teamLabel, sdLabel],
         links: [{template:pdfLink, link:"imgs/gamermeet.pdf"}],
@@ -97,7 +108,7 @@ var projects =
     },
     {
         title:"<h1>Hexaphobia</h1>",
-        desc:"<p>Hexaphobia is a game about that scary number between 5 and 7. The game jam's theme was 'Roll of the dice', which I implemented as a high-risk high-reward ability where you quite literally roll the dice.</p>",
+        desc:"<p>Hexaphobia is a ¤game about that scary ¤number between 5 and 7. The game jam's ¤theme was 'Roll of the dice', which I implemented as a high-risk high-reward ¤ability where you quite literally roll the dice.</p>",
         img:"imgs/hexaphobia.png",
         labels:[unityLabel, csharpLabel, releasedLabel, soloLabel, jamLabel],
         startyear:2022,
@@ -109,7 +120,7 @@ var projects =
     },
     {
         title:"<h1>Tiss</h1>",
-        desc:"<p>Top-down horde/survival game. In order to survive for long, players must build and maintain a base. The problem is that the environment rotates and completely changes the map layout on a regular basis.</p>",
+        desc:"<p>Top-down ¤horde/survival game. In order to survive for long, players must build and maintain a ¤base. The problem is that the ¤environment rotates and completely changes the map layout on a regular basis.</p>",
         youtube:"https://www.youtube.com/embed/5fmsrvn3kyU",
         labels:[unityLabel, csharpLabel, releasedLabel, soloLabel],
         startyear:2022,
@@ -124,7 +135,7 @@ var projects =
         labels:[reactLabel, htmlLabel, jsLabel, cssLabel, firebaseLabel, releasedLabel, teamLabel],
         startyear:2022,
         endyear:2022,
-        desc:"<p>A website for finding and sharing cooking recipes. Uses React, Firebase, and authentication through Google. Created by a diverse team practising agile development.</p>",
+        desc:"<p>A ¤website for finding and sharing ¤cooking recipes. Uses React, Firebase, and ¤authentication through Google. Created by a diverse team practising agile development.</p>",
         img:"imgs/dishwish.png",
         links: [
             {template:gitlabLink, link:"https://gitlab.stud.idi.ntnu.no/tdt4140-2022/landsby-3/40/dishwish"},
@@ -133,7 +144,7 @@ var projects =
     },
     {
         title:"<h1>Talgdat</h1>",
-        desc:"<p>A unity application that can visualize the process of various sorting algorithms.</p>",
+        desc:"<p>A ¤unity application that can visualize the ¤process of various ¤sorting algorithms.</p>",
         vid:"imgs/talgdat.mp4",
         startyear:2021,
         endyear:2021,
@@ -142,7 +153,7 @@ var projects =
     },
     {
         title:"<h2>O'Burger: Barackening</h2>",
-        desc:"<p>App for ordering food from O'Burger.</p><p>A continuation of the legendary O'Burger series, which now supports sending and retrieving orders on an external server.</p><p>This was our project for the course IT1901. Made by a team of four practising agile development.</p>",
+        desc:"<p>App for ordering ¤food from O'Burger.</p><p>A continuation of the legendary O'Burger series, which now supports sending and retrieving ¤orders on an external ¤server.</p><p>This was our project for the course IT1901. Made by a team of four practising agile development.</p>",
         img:"imgs/oburger-barackening.png",
         startyear:2021,
         endyear:2021,
@@ -152,7 +163,7 @@ var projects =
     },
     {
         title:"<h2>Allied Abductees</h2>",
-        desc:"<p>Submission for the 2021 GMTK game jam.</p><p>Made in 48 hours with Unity and C# by a team of three. The theme was 'Joined together', which we implemented as controlling multiple conjoined characters.</p>",
+        desc:"<p>Submission for the 2021 GMTK game jam.</p><p>Made in 48 hours with Unity and C# by a ¤team of three. The theme was 'Joined together', which we implemented as controlling multiple conjoined ¤characters.</p>",
         vid:"imgs/alliedabductees.mp4",
         startyear:2021,
         endyear:2021,
@@ -165,7 +176,7 @@ var projects =
     },
     {
         title:"<h2>Memory game</h2>",
-        desc:"<p>A memory game about matching pictures of various environments.</p><p>Made with Java by a team of two. This was our project for the course TDT4100 (2021).</p>",
+        desc:"<p>A ¤memory game about matching ¤pictures of various ¤environments.</p><p>Made with Java by a team of two. This was our ¤project for the course TDT4100 (2021).</p>",
         img:"imgs/memorygame.PNG",
         startyear:2021,
         endyear:2021,
@@ -174,7 +185,7 @@ var projects =
     },
     {
         title:"<h1>O'Burger</h1>",
-        desc:"<p>Obama's <i>very</i> official burger website</p><p>Made with HTML, JS and CSS by a team of five. This was our project for the course IT2805 (2020).</p>",
+        desc:"<p>Obama's <i>very</i> official ¤burger website</p><p>Made with HTML, JS and CSS by a team of five. This was our ¤project for the course IT2805 (2020).</p>",
         img:"imgs/oburger.gif",
         startyear:2020,
         endyear:2020,
@@ -186,8 +197,8 @@ var projects =
     },
 
     {
-        title:"<h2>The maze runner</h2>",
-        desc:"<p>One of my first large projects. This adventure map in Minecraft is based on the popular franchise with the same name.</p><p>I have since release lost access to the world files, which gave me a good reason to learn Git.</p>",
+        title:"<h2>The ¤maze runner</h2>",
+        desc:"<p>One of my first large projects. This ¤adventure map in Minecraft is based on the popular franchise with the same ¤name.</p><p>I have since release lost access to the ¤world files, which gave me a good reason to learn Git.</p>",
         img:"imgs/mazeRunner.gif",
         startyear:2015,
         endyear:2016,
@@ -207,7 +218,7 @@ var projects =
     */
     {
         title:"<h1>Frontegy</h1>",
-        desc:"<p>A mix of chess and poker.</p><p>Frontegy was primarily a sandbox for me to experiment with different coding strategies. At the time I was inexperienced with Unity development and could therefore not make a finished product.</p>",
+        desc:"<p>A ¤mix of chess and poker.</p><p>Frontegy was primarily a ¤sandbox for me to experiment with different coding strategies. At the time I was inexperienced with Unity development and could therefore not make a finished product.</p>",
         img:"imgs/frontegy.PNG",
         startyear:2020,
         endyear:2021,
@@ -358,7 +369,7 @@ function addProjects() {
         //sectionEL.dataset.scrollscalarx = "-0.6";
         //sectionEL.dataset.scrolloffsetx = "-200"*i+100;
         //sectionEL.dataset.doscrollx = true;
-        sectionEL.className = "";
+        sectionEL.className = "dark";
         sectionEL.link = project.link;
         //sectionEL.style.width = project.width+"px";
 
@@ -421,7 +432,7 @@ function addProjects() {
 
 
         var linksWrapperEL = document.createElement("div");
-        linksWrapperEL.className = "linkswrapper";
+        linksWrapperEL.className = "linkswrapper dark";
 
         var linksEL = document.createElement("ul");
         if (project.links)
@@ -559,6 +570,16 @@ function addLabel(el, label) {
     
     el.appendChild(labEL);
 }
+function addSillyShit() {
+    for (var i = wrapperEL.childElementCount-1; i > 0; i--) {
+        if (Math.random() > sillyShitChance) continue;
+        let uselessEL = document.createElement("h3");
+        uselessEL.innerText = sillyshits[Math.floor(Math.random()*sillyshits.length)];
+        uselessEL.className = "sillyshow sillyshit";
+        wrapperEL.children[i].insertBefore(uselessEL, wrapperEL.children[i].children[0]);
+    }
+}
 //sortByEndYear();
 addProjects();
+addSillyShit();
 search();  // Update "found X projects"

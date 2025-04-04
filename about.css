@@ -4,6 +4,12 @@ a, a:visited, a:hover, a:active {
 .fg {
     padding-top : 100px;
 }
+article.fg.dark, article.fg.light {
+    width : 700px;
+}
+article.fg.silly {
+    width: 100%;
+}
 #chartthing {
     width : 1000px;
 }
@@ -29,7 +35,17 @@ td {
     width: 200px;
     height: 200px;
     position: relative;
-
+}
+.celldiv.light {
+    color: white;
+}
+.celldiv.silly {
+    color : black;
+    border-radius: 0% 40% 0% 45%;
+}
+.celldiv.silly:hover {
+    width:300px;
+    height: 300px;
 }
 
 .cellimg {

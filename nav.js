@@ -3,7 +3,7 @@ var reloadBugFixValue = 0;
 function resetNav() {
     var nav = getNav();
     nav.innerHTML = "";
-    nav.className = "sticky unselectable";
+    nav.className = "sticky unselectable dark";
 
     var navList = document.createElement("ul");
     nav.appendChild(navList);

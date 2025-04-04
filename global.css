@@ -1,41 +1,68 @@
 /*GLOBAL*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&family=Russo+One&family=Zilla+Slab+Highlight&family=VT323&display=swap');
 
-* {
-    font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
-}
-
-body {
+body.dark, body.light {
     padding : 0px;
     margin : 0px;
     background-color: black;
     font-size : 18px;
+    font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body.silly {
+    padding : 1px;
+    margin : 2px;
+    background-color: pink;
+    font-size : 25px;
+    font-family: 'Rock Salt', cursive; /* For that chaotic handwritten feel */
 }
 
 article.bg {
-    color : white;
     z-index: -100000;
     padding-top : 0vh;
     padding-bottom : 5vh;
-    background-color: #333353;
     min-height : 20vh; /* body.height - header.height */
     overflow: hidden;
 }
+article.bg.dark {
+    color : white;
+    background-color: #333353;
+}
+article.bg.light {
+    background-color : white;
+    color: #333353;
+}
+article.bg.silly {
+    background-image: url("imgs/fiatmultipla.jpg");
+    background-attachment: fixed;
+    background-size: 43% 32%;
+    color: yellow;
+}
 article.fg {
     margin : auto;
-    width : 700px;
     max-width : 100%;
 }
 
 /*NAV*/
 nav {
-    background-color: #111121;
     position : sticky;
     height : 8vh;
     font-size : 4vh;
     opacity : 1;
-    box-shadow : 0vh -12vh 24vh 24vh rgba(10, 10, 10, 0.5);
     z-index: 1000;
+}
+nav.dark, nav.light {
+    box-shadow : 0vh -12vh 24vh 24vh rgba(10, 10, 10, 0.5);
+}
+nav.dark {
+    background-color: #111121;
+}
+nav.light {
+    background-color: #AAAAAA;
+}
+nav.silly {
+    background-color: cyan;
 }
 nav ul {
     height : 100%;
@@ -64,8 +91,39 @@ nav li * {
 }
 nav li *:hover {
     color : white;
+}
+nav.dark li *:hover {
+    background-color: #222242;
     text-shadow : #030303 4px 4px 0px;
-    background-color : #222242;
+}
+nav.light li *:hover {
+    background-color : #888888;
+    text-shadow : #030303 2px 2px 1px;
+}
+
+/*THEME BAR*/
+#theme {
+    border-radius: 5px;
+    position: sticky;
+    z-index: 100;
+    background-color: gray;
+    width: 120px;
+    height: 40px;
+    float: right;
+}
+#theme .themebutton {
+    width:40px;
+    height:100%;
+    cursor: pointer;
+    display: inline-block;
+}
+.themebutton img {
+    width : 85%;
+    height: 85%;
+}
+.themebutton.selected {
+    background-color: white;
+    border-radius: 5px;
 }
 
 /*HEADER, SCROLL*/
@@ -118,16 +176,15 @@ img.scroll {
     -o-user-select: none;
     user-select: none;
 }
+img.centered {
+    /* Requires position:absolute or position:relative */
+    position : relative;
+    left : 50%;  
+    top : 50%;
+    transform : translate(-50%, -50%);
+}
 .centered {
     text-align: center;
-}
-.lightmode {
-    color : #000000;
-    background-color: #EEEEEE;
-}
-.darkmode {
-    color : #EEEEEE;
-    background-color: #111111;
 }
 
 /* SCROLLBARS */

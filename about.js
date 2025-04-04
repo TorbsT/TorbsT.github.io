@@ -24,6 +24,9 @@ var game3x3 = [
     {text:"<h1>The Battle for Middle Earth: The Rise of the Witch King</h1>", img:"rotwk.jpg"},
     {text:"<h1>Spooky's Jump Scare Mansion</h1>", img:"spookys.webp"},
 ];
+var periods = [
+    {name:"bachelor", start:2020, end:2023}
+]
 
 var music3x3EL = document.getElementById("music3x3");
 var game3x3EL = document.getElementById("game3x3");
@@ -46,7 +49,7 @@ function fill3x3(el, data, path) {
 
         textEL.innerHTML = data[i].text;
         imgEL.src = path+data[i].img;
-        wrapperEL.className = "hiddenOverflow celldiv";
+        wrapperEL.className = "hiddenOverflow celldiv dark";
         imgEL.className = "cellimg";
         blackEL.className = "cellblack";
         textEL.className = "celltext";
@@ -62,6 +65,6 @@ function fill3x3(el, data, path) {
 fill3x3(music3x3EL, music3x3, "imgs/about/");
 fill3x3(game3x3EL, game3x3, "imgs/about/");
 
-var birthday = new Date(2001, 09, 22);
+var birthday = new Date(2001, 9, 22);
 var yearsOldEL = document.getElementById("yearsold");
 yearsOldEL.innerText = Math.abs(new Date(Date.now() - birthday).getUTCFullYear() - 1970);

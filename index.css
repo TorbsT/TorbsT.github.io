@@ -1,8 +1,16 @@
 #projectswrapper {
     min-height : 1000px;
 }
-article.fg {
+#projectswrapper.silly {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 2 equal columns */
+    gap: 10px; /* space between items */
+}
+article.fg.dark, article.fg.light {
     width : 900px;
+}
+article.fg.silly {
+    width: 100%;
 }
 section {
     vertical-align: top;
@@ -12,10 +20,24 @@ section {
     z-index: 20;
     height : 300px;
     margin-top: 60px;
-    transition :cubic-bezier(0, 1, 0.5, 1);
-    transition-duration: 0.4s;
+    transition: 0.8s;
     opacity: 1;
     box-shadow: black 1px 1px 5px;
+}
+section.silly {
+    border-radius: 10%;
+    box-shadow: black -25px 30px 0px;
+    border: 5px dotted brown;
+    background-color: blue;
+    color: red;
+}
+section.silly:hover {
+    width: 70%;
+    height: 400px;
+}
+section.dark, section.light {
+    background-color: #EEEEEE;
+    color : black;
 }
 
 section .half {
@@ -29,8 +51,6 @@ section .half {
     z-index: 10;
 }
 .content {
-    background-color: #EEEEEE;
-    color : black;
     max-width: 40%;
     float : left;
 }
@@ -52,12 +72,18 @@ section .content .linkswrapper {
 }
 section .content .linkswrapper ul {
     width : 100%;
-    background-color: #EEEEEE;  /*inherit does not work*/
+
     position : relative;
     /*align-self : flex-end;*/
     list-style-type : none;
     padding : 0px;
     margin : 0px;
+}
+.linkswrapper.dark, .linkswrapper.light {
+    background-color: #EEEEEE;  /*inherit does not work*/
+}
+.linkswrapper.silly {
+    background-color: blue;
 }
 
 .linkswrapper ul li {
@@ -117,13 +143,6 @@ section .imgwrapper img, section .imgwrapper video {
     max-width : 150%;
     max-height : 150%;
 }
-img.centered {
-    /* Requires position:absolute or position:relative */
-    position : relative;
-    left : 50%;  
-    top : 50%;
-    transform : translate(-50%, -50%);
-}
 
 .tooltiptext {
     display : block;
@@ -163,6 +182,9 @@ img.centered {
 }
 .label:hover {
     text-decoration: underline;
+}
+.sillyshit {
+    background-color: brown;
 }
 
 
