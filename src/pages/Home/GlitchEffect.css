@@ -1,0 +1,74 @@
+.glitch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+  }
+  
+  .glitch-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .glitch-text::before,
+  .glitch-text::after {
+    content: "Your Ndme"; /* Same as the main text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ff0080;
+    background: #000;
+    z-index: -1;
+  }
+  
+  .glitch-text::before {
+    animation: glitch-anim-1 1.5s infinite linear alternate-reverse;
+    left: 2px; /* X-axis shift */
+  }
+  
+  .glitch-text::after {
+    animation: glitch-anim-2 1s infinite linear alternate-reverse;
+    left: -2px; /* X-axis shift */
+  }
+  
+  @keyframes glitch-anim-1 {
+    0% {
+      clip-path: inset(10% 0 80% 0);
+      transform: skew(-0.5deg);
+      opacity: 1;
+    }
+    50% {
+      clip-path: inset(50% 0 50% 0);
+      transform: skew(0.5deg);
+      opacity: 0.6;
+    }
+    100% {
+      clip-path: inset(10% 0 80% 0);
+      transform: skew(-0.5deg);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes glitch-anim-2 {
+    0% {
+      clip-path: inset(30% 0 60% 0);
+      transform: skew(0.2deg);
+      opacity: 0.8;
+    }
+    50% {
+      clip-path: inset(60% 0 40% 0);
+      transform: skew(-0.2deg);
+      opacity: 0.6;
+    }
+    100% {
+      clip-path: inset(30% 0 60% 0);
+      transform: skew(0.2deg);
+      opacity: 0.8;
+    }
+  }
+  

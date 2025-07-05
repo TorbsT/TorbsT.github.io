@@ -1,17 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from "@mui/material/styles";
+import { ThemeSwitcherProvider, useThemeSwitcher } from "./ThemeContext";
+import CursorTrail from "./garbage/CursorTrail";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Wrapper to bridge theme context to MUI ThemeProvider
+const ThemeWrapper = () => {
+  const { theme } = useThemeSwitcher();
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {theme === "silly" && <CursorTrail />}
+      <Router>
+        <App />
+      </Router>
+    </ThemeProvider>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeSwitcherProvider>
+      <ThemeWrapper />
+    </ThemeSwitcherProvider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
