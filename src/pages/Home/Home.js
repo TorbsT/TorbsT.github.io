@@ -98,8 +98,10 @@ const Home = () => {
                 onOpen={() => setDrawer(true)}
                 sx={{
                   width: SIDEBAR_WIDTH,
+                  //minWidth: "0vh",
                   flexShrink: 0,
                   padding: "0vh",
+                  zIndex: 8000,
                 }}
               >
                 {/* Sidebar */}

@@ -52,7 +52,7 @@ const Bouncer = React.memo(({ id }) => {
         backgroundColor: c,
         color: "red",
         fontSize: "30px",
-        zIndex: 1000,
+        zIndex: 9999,
         transition: "none",
       }}
     />
