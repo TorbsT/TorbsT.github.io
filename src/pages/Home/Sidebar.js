@@ -13,24 +13,24 @@ import ThemeSwitcher from "../../hooks/ThemeSwitcher";
 
 const socialLinks = [
   {
-    name: "LinkedIn",
-    display: "linkedin.com/in/torbst",
-    url: "https://www.linkedin.com/in/torbst/",
-    icon: <LinkedInIcon sx={{ width: "100%", height: "100%" }} />,
-  },
-  {
-    name: "GitHub",
-    display: "github.com/TorbsT",
-    url: "https://github.com/TorbsT",
-    icon: <GitHubIcon sx={{ width: "100%", height: "100%" }} />,
-  },
-  {
     name: "Itch",
     display: "torbst.itch.io",
     url: "https://torbst.itch.io/",
     icon: <SportsEsportsIcon sx={{ width: "100%", height: "100%" }} />,
   },
+  {
+    name: "GitHub",
+    display: "github.com/torbst",
+    url: "https://github.com/torbst",
+    icon: <GitHubIcon sx={{ width: "100%", height: "100%" }} />,
+  },
 
+  {
+    name: "LinkedIn",
+    display: "linkedin.com/in/torbst",
+    url: "https://www.linkedin.com/in/torbst/",
+    icon: <LinkedInIcon sx={{ width: "100%", height: "100%" }} />,
+  },
   {
     name: "Email",
     display: "torbst2001@gmail.com",
@@ -167,31 +167,40 @@ const Sidebar = forwardRef((props, ref) => {
           {socialLinks.map(({ name, display, url, icon }) => (
             <Box
               component="li"
+              color="text.primary"
               sx={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "flex-end",
+                color: "text.primary",
               }}
             >
-              <Typography color="text.primary" sx={{ fontSize: "2vh" }}>
-                {display}
-              </Typography>
-
-              <IconButton
-                component="a"
+              <a
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Open my ${name} profile in a new tab`}
-                sx={{
-                  color: "primary.main",
-                  width: "4vh",
-                  height: "4vh",
-                  padding: "0.75vh",
-                }}
+                onClick={() => console.log("Clicked!")}
               >
-                {icon}
-              </IconButton>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography sx={{ fontSize: "2vh" }}>{display}</Typography>
+
+                  <Box
+                    sx={{
+                      color: "text.primary",
+                      width: "4vh",
+                      height: "4vh",
+                      padding: "0.75vh",
+                    }}
+                  >
+                    {icon}
+                  </Box>
+                </Box>
+              </a>
             </Box>
           ))}
         </Box>

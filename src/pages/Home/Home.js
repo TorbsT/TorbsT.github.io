@@ -17,6 +17,7 @@ import Hero from "./Hero";
 import Projects from "./Projects";
 import Exp from "./Exp";
 import Edu from "./Edu";
+import Footer from "./Footer";
 import Sidebar, { Lk } from "./Sidebar";
 import Docker from "./DockSidebar";
 import { CircleBlobs, RandomBlobs } from "./Blobs";
@@ -131,6 +132,12 @@ const Home = () => {
             {/* Education section */}
             <Box mt={20}>
               <Edu />
+            </Box>
+          </Element>
+
+          <Element name="footer">
+            <Box mt={20}>
+              <Footer />
             </Box>
           </Element>
         </Box>

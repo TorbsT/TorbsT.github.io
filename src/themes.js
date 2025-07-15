@@ -29,10 +29,26 @@ export const darkTheme = createTheme({
       paper: "#121212", // cards
       highlight: "#121212",
     },
+    a: {
+      color: "black",
+    },
     success: { main: "#2e7d32" },
     error: { main: "#d32f2f" },
     warning: { main: "#ed6c02" },
     info: { main: "#0288d1" },
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        a: {
+          color: "white",
+          textDecoration: "none",
+        },
+        "a:hover": {
+          textDecoration: "underline",
+        },
+      },
+    },
   },
   typography,
 });
@@ -47,6 +63,19 @@ export const lightTheme = createTheme({
       default: "#fffff",
       paper: "#ffffff",
       highlight: "#ffffff",
+    },
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        a: {
+          color: "black",
+          textDecoration: "none",
+        },
+        "a:hover": {
+          textDecoration: "underline",
+        },
+      },
     },
   },
   typography,
