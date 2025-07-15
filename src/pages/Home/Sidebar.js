@@ -87,8 +87,9 @@ const Sidebar = forwardRef((props, ref) => {
       sx={{
         position: isMobile ? "relative" : "sticky",
         top: 0,
-        height: isMobile ? `${SIDEBAR_HEIGHT}px` : "100vh",
-        width: "100%",
+        height: "100vh",
+        width: SIDEBAR_WIDTH,
+        maxWidth: "90vw",
         paddingTop: "12vh",
         paddingLeft: 3,
         paddingBottom: "3vh",

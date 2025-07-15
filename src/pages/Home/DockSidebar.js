@@ -2,8 +2,8 @@ import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Sidebar from "./Sidebar";
 
-const openButtonSize = "100px";
-const buttonPadding = "20px";
+const openButtonSize = "60px";
+const buttonPadding = "12px";
 const color = "white";
 
 function Docker({ setDrawer }) {
