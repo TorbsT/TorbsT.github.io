@@ -13,11 +13,12 @@ import {
 import NtnuImage from "./ntnu.png";
 import ChibaImage from "./chibadai.png";
 import SngImage from "./sng.png";
+import useIsMobile from "../../hooks/useIsMobile";
 
 function EduItem({ edu, img, desc }) {
   const imgSize = 120;
   return (
-    <Grid item xs={12} sm={6} md={4}>
+    <Grid item xs={2} sm={1}>
       <Card
         sx={{
           width: 350,
@@ -42,12 +43,14 @@ function EduItem({ edu, img, desc }) {
 }
 
 function Edu() {
+  const isMobile = useIsMobile();
   return (
     <Box mt={10}>
       <Typography
         variant="h4"
         gutterBottom
         component="h2"
+        align={isMobile ? "center" : "left"}
         sx={{
           fontWeight: 500,
           color: "secondary.main", // or 'primary.main' for consistency
@@ -55,7 +58,12 @@ function Edu() {
       >
         Education
       </Typography>
-      <Grid container spacing={6}>
+      <Grid
+        container
+        spacing={6}
+        columns={2}
+        justifyContent={isMobile ? "center" : "left"}
+      >
         <EduItem
           edu="Chiba University"
           img={ChibaImage}

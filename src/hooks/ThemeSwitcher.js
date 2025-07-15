@@ -6,6 +6,36 @@ import CelebrationIcon from "@mui/icons-material/Celebration";
 import { useThemeSwitcher } from "../ThemeContext";
 import Tooti from "../pages/Home/Tooti";
 
+const buttons = [
+  {
+    name: "dark",
+    title: "Dark Mode",
+    prop: (
+      <DarkModeIcon
+        sx={{ width: "100%", height: "100%", minWidth: 0, minHeight: 0 }}
+      />
+    ),
+  },
+  {
+    name: "light",
+    title: "Light Mode",
+    prop: (
+      <LightModeIcon
+        sx={{ width: "100%", height: "100%", minWidth: 0, minHeight: 0 }}
+      />
+    ),
+  },
+  {
+    name: "silly",
+    title: "HTML Hell Mode",
+    prop: (
+      <CelebrationIcon
+        sx={{ width: "100%", height: "100%", minWidth: 0, minHeight: 0 }}
+      />
+    ),
+  },
+];
+
 const ThemeSwitcher = () => {
   const { mode, setMode } = useThemeSwitcher();
 
@@ -22,35 +52,28 @@ const ThemeSwitcher = () => {
     <div
       style={{
         display: "flex",
-        gap: "0.5rem",
+        gap: "2vh",
         justifyContent: "right",
-        margin: "1rem 0",
+        margin: "0vh 0",
       }}
     >
-      <Tooti title="Light Mode">
+      {buttons.map(({ name, title, prop }) => (
+        //<Tooti title={title}>
         <IconButton
-          onClick={() => setMode("light")}
-          style={getButtonStyle("light")}
+          onClick={() => setMode(name)}
+          style={getButtonStyle(name)}
+          sx={{
+            width: "3.5vh",
+            height: "3.5vh",
+            minWidth: 0,
+            minHeight: 0,
+            padding: "0.5vh",
+          }}
         >
-          <LightModeIcon sx={{ color: "text.primary" }} />
+          {prop}
         </IconButton>
-      </Tooti>
-      <Tooti title="Dark Mode">
-        <IconButton
-          onClick={() => setMode("dark")}
-          style={getButtonStyle("dark")}
-        >
-          <DarkModeIcon sx={{ color: "text.primary" }} />
-        </IconButton>
-      </Tooti>
-      <Tooti title="HTML Hell Mode">
-        <IconButton
-          onClick={() => setMode("silly")}
-          style={getButtonStyle("silly")}
-        >
-          <CelebrationIcon sx={{ color: "text.primary" }} />
-        </IconButton>
-      </Tooti>
+        //</Tooti>
+      ))}
     </div>
   );
 };

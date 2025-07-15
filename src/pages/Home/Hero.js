@@ -28,7 +28,7 @@ function Hero() {
       : 0);
 
   const isMobile = useIsMobile();
-  const maskWidth = 400;
+  const maskWidth = 398;
   const maskHeight = Math.floor((maskWidth * 1474) / 1110);
   return (
     <Box

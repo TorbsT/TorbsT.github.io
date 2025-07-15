@@ -5,6 +5,7 @@ function Tooti({ title, underline = false, children }) {
   const theme = useTheme();
   const bgColor = theme.palette.secondary.dark;
 
+  return <>{children}</>;
   return (
     <Tooltip
       title={title}

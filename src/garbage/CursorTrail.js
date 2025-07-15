@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+const size = "3vh";
 const CursorTrail = () => {
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -7,10 +8,10 @@ const CursorTrail = () => {
       trail.style.position = "fixed";
       trail.style.top = `${e.clientY}px`;
       trail.style.left = `${e.clientX}px`;
-      trail.style.width = "10px";
-      trail.style.height = "10px";
+      trail.style.width = size;
+      trail.style.height = size;
       trail.style.borderRadius = "50%";
-      trail.style.backgroundColor = "magenta";
+      trail.style.backgroundColor = "cyan";
       trail.style.pointerEvents = "none";
       trail.style.zIndex = 9999;
       trail.style.opacity = 0.8;

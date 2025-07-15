@@ -2,11 +2,42 @@ import React, { forwardRef } from "react";
 import { Box, Typography, List, ListItemButton } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import IconButton from "@mui/material/IconButton";
+import EmailIcon from "@mui/icons-material/Email";
 import { SIDEBAR_HEIGHT, SIDEBAR_WIDTH } from "../../constants/layout";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Link } from "react-scroll";
 import ThemeSwitcher from "../../hooks/ThemeSwitcher";
+
+const socialLinks = [
+  {
+    name: "LinkedIn",
+    display: "linkedin.com/in/torbst",
+    url: "https://www.linkedin.com/in/torbst/",
+    icon: <LinkedInIcon sx={{ width: "100%", height: "100%" }} />,
+  },
+  {
+    name: "GitHub",
+    display: "github.com/TorbsT",
+    url: "https://github.com/TorbsT",
+    icon: <GitHubIcon sx={{ width: "100%", height: "100%" }} />,
+  },
+  {
+    name: "Itch",
+    display: "torbst.itch.io",
+    url: "https://torbst.itch.io/",
+    icon: <SportsEsportsIcon sx={{ width: "100%", height: "100%" }} />,
+  },
+
+  {
+    name: "Email",
+    display: "torbst2001@gmail.com",
+    url: "mailto:torbst2001@gmail.com",
+    icon: <EmailIcon sx={{ width: "100%", height: "100%" }} />,
+  },
+];
 
 export function Lk({ to, txt }) {
   return (
@@ -18,11 +49,12 @@ export function Lk({ to, txt }) {
       containerId="scroll-container"
       sx={{
         justifyContent: "flex-end",
+        padding: "1vh",
       }}
     >
       <Typography
         variant="body1"
-        sx={{ textAlign: "right", color: "text.primary" }}
+        sx={{ textAlign: "right", color: "text.primary", fontSize: "2vh" }}
       >
         {txt}
       </Typography>
@@ -56,81 +88,112 @@ const Sidebar = forwardRef((props, ref) => {
         position: isMobile ? "relative" : "sticky",
         top: 0,
         height: isMobile ? `${SIDEBAR_HEIGHT}px` : "100vh",
-        width: isMobile ? "100%" : `${SIDEBAR_WIDTH}px`,
-        paddingTop: 15,
+        width: `${SIDEBAR_WIDTH}`,
+        paddingTop: "12vh",
         paddingLeft: 3,
-        paddingBottom: 3,
-        paddingRight: isMobile ? 3 : 15,
+        paddingBottom: "3vh",
+        paddingRight: "20%", //15,
         display: "flex",
         flexDirection: "column",
         textAlign: "right",
-        color: "white",
+        rowGap: "5vh",
+        lineHeight: 0,
+        fontSize: "1vh",
+        backgroundColor: "background.default",
       }}
     >
-      <Link
-        to="hero"
-        smooth
-        duration={500}
-        containerId="scroll-container"
-        style={{
-          cursor: "pointer",
-          textDecoration: "none",
-          display: "inline-block",
-        }}
-        tabIndex={0}
-        role="button"
-      >
+      <Box>
+        <Link
+          to="hero"
+          smooth
+          duration={500}
+          containerId="scroll-container"
+          style={{
+            cursor: "pointer",
+            textDecoration: "none",
+            display: "inline-block",
+          }}
+          tabIndex={0}
+          role="button"
+        >
+          <Typography
+            variant="h5"
+            component="h2"
+            gutterBottom
+            sx={{
+              fontWeight: 600,
+              color: "primary.main",
+              fontSize: "3.5vh",
+              paddingLeft: 0,
+            }}
+          >
+            Torbjørn Stakvik
+          </Typography>
+        </Link>
         <Typography
-          variant="h5"
+          color="gray"
+          variant="h6"
           component="h2"
           gutterBottom
-          sx={{
-            fontWeight: 600,
-            color: "primary.main",
-          }}
+          sx={{ fontWeight: 600, fontSize: "2vh" }}
         >
-          Torbjørn Stakvik
+          Software developer
         </Typography>
-      </Link>
+      </Box>
 
-      <Typography
-        color="gray"
-        variant="h6"
-        component="h2"
-        gutterBottom
-        sx={{ fontWeight: 600 }}
-      >
-        Software developer
-      </Typography>
-
-      <Box mt={2}>
-        <List>
+      <Box mt="0vh">
+        <List sx={{ padding: 0 }}>
           <Lk to="hero" txt="TOP" />
           <Lk to="games" txt="GAMES" />
           <Lk to="experience" txt="EXPERIENCE" />
           <Lk to="education" txt="EDUCATION" />
         </List>
       </Box>
-
-      <Box mt={2}>
+      <Box mt="0vh">
         <ThemeSwitcher></ThemeSwitcher>
       </Box>
-      <Box mt={2}>
-        <Typography
-          variant="subtitle1"
-          gutterBottom
-          sx={{ color: "text.primary" }}
+      <Box mt="0vh">
+        <Box
+          component="ul"
+          sx={{
+            display: "block",
+            listStyle: "none",
+            p: 0,
+            m: 0,
+            lineHeight: "2vh",
+          }}
         >
-          Contact
-        </Typography>
-        <Typography variant="body2" sx={{ color: "text.primary" }}>
-          torbst2001@gmail.com
-        </Typography>
-        <Typography variant="body2" sx={{ color: "text.primary" }}>
-          LinkedIn / GitHub
-        </Typography>
-        <GitHubIcon sx={{ color: "text.primary" }} />
-        <LinkedInIcon sx={{ color: "text.primary" }} />
+          {socialLinks.map(({ name, display, url, icon }) => (
+            <Box
+              component="li"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "flex-end",
+              }}
+            >
+              <Typography color="text.primary" sx={{ fontSize: "2vh" }}>
+                {display}
+              </Typography>
+
+              <IconButton
+                component="a"
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open my ${name} profile in a new tab`}
+                sx={{
+                  color: "primary.main",
+                  width: "4vh",
+                  height: "4vh",
+                  padding: "0.75vh",
+                }}
+              >
+                {icon}
+              </IconButton>
+            </Box>
+          ))}
+        </Box>
       </Box>
     </Box>
   );

@@ -101,10 +101,12 @@ function Project({ name, img, desc, tags, link }) {
 }
 
 function Projects() {
+  const isMobile = useIsMobile();
   return (
-    <Box mt={10}>
+    <Box mt={10} sx={{ backgroundColor: "background.highlight" }}>
       <Box>
         <Typography
+          align={isMobile ? "center" : "left"}
           variant="h4"
           component="h2"
           sx={{
@@ -115,13 +117,17 @@ function Projects() {
         >
           Featured Games
         </Typography>
-        <Typography mt={1} variant="body1">
+        <Typography mt={1} variant="body1" align={isMobile ? "center" : "left"}>
           I make games in my free time sometimes. All of my games are available
           to play in the browser!
         </Typography>
       </Box>
       <Box mt={5}>
-        <Grid container spacing={3}>
+        <Grid
+          container
+          spacing={3}
+          justifyContent={isMobile ? "center" : "left"}
+        >
           <Project
             name="D.O.M.E."
             img={DomeImage}

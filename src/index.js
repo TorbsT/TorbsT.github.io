@@ -15,7 +15,7 @@ const ThemeWrapper = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {theme === "silly" && <CursorTrail />}
+      {theme.name === "silly" && <CursorTrail />}
       <Router>
         <App />
       </Router>
