@@ -28,7 +28,7 @@ import Mask from "./Mask";
 import Bouncer from "./BouncingShit";
 import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-const Home = () => {
+const Home = ({ children }) => {
   const [drawer, setDrawer] = useState(false);
 
   const theme = useTheme();
@@ -110,36 +110,7 @@ const Home = () => {
               </SwipeableDrawer>
             </React.Fragment>
           )}
-
-          {/* Hero Section */}
-          <Element name="hero">
-            <Hero />
-          </Element>
-
-          {/* Games Section */}
-          <Element name="games">
-            <Projects />
-          </Element>
-
-          <Element name="experience">
-            {/* Experience section */}
-            <Box mt={20}>
-              <Exp />
-            </Box>
-          </Element>
-
-          <Element name="education">
-            {/* Education section */}
-            <Box mt={20}>
-              <Edu />
-            </Box>
-          </Element>
-
-          <Element name="footer">
-            <Box mt={20}>
-              <Footer />
-            </Box>
-          </Element>
+          {children}
         </Box>
       </Box>
     </Box>

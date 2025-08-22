@@ -4,17 +4,26 @@ import Mask from "./pages/Home/Mask";
 import About from "./pages/About";
 import Blobs from "./pages/Home/Blobs";
 import Layout from "./pages/Home/LayoutTest";
+import Countdown from "./pages/Countdown";
 import CursorTrail from "./garbage/CursorTrail";
+import MainPage from "./pages/Home/MainPage";
 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route
+        path="/"
+        element={
+          <Home>
+            <MainPage />
+          </Home>
+        }
+      />
       <Route path="/about" element={<About />} />
       <Route path="/mask" element={<Mask />} />
       <Route path="/blobs" element={<Blobs />} />
       <Route path="/layout" element={<Layout />} />
-      <Route path="/trail" element={<Layout />} />
+      <Route path="/countdown" element={<Countdown />} />
     </Routes>
   );
 }
