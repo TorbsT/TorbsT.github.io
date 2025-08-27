@@ -19,6 +19,7 @@ import DreamImage from "./dreamescape.png";
 import DomeImage from "./dome.png";
 import AlliedImage from "./alliedabductees.png";
 import HexaImage from "./hexaphobia.png";
+import OTBImage from "./oathtoburn.jpg";
 import useIsMobile from "../../hooks/useIsMobile";
 
 function Tag({ text }) {
@@ -129,9 +130,16 @@ function Projects() {
           justifyContent={isMobile ? "center" : "left"}
         >
           <Project
+            name="Oath to Burn"
+            img={OTBImage}
+            desc="Fantasy adventure"
+            tags={["2025"]}
+            link="https://torbst.itch.io/dome"
+          />
+          <Project
             name="D.O.M.E."
             img={DomeImage}
-            desc="Burnout simulator"
+            desc="Burnout simulator that's played with a single button"
             tags={["2024"]}
             link="https://torbst.itch.io/dome"
           />
@@ -152,7 +160,7 @@ function Projects() {
           <Project
             name="Allied Abductees"
             img={AlliedImage}
-            desc="Says a lot about society"
+            desc="Endless runner"
             tags={["2021"]}
             link="https://torbst.itch.io/allied-abductees"
           />

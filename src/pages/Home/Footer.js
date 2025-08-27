@@ -11,7 +11,7 @@ function Footer() {
       }}
     >
       <Typography mt={20} variant="body1" align={isMobile ? "center" : "left"}>
-        There is no more content. go home
+        End of page
       </Typography>
     </Box>
   );
