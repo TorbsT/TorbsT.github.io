@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Blobs from "./pages/Home/Blobs";
 import Layout from "./pages/Home/LayoutTest";
 import Countdown from "./pages/Countdown";
+import NotFound from "./pages/NotFound";
 import CursorTrail from "./garbage/CursorTrail";
 import MainPage from "./pages/Home/MainPage";
 
@@ -24,6 +25,7 @@ export default function App() {
       <Route path="/blobs" element={<Blobs />} />
       <Route path="/layout" element={<Layout />} />
       <Route path="/countdown" element={<Countdown />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
