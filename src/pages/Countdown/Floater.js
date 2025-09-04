@@ -1,11 +1,7 @@
 import { Box, Typography, Container, Paper, useTheme } from "@mui/material";
 import PlaneImg from "./plane.png";
 
-const mexFlag = "Countdown/mex.png";
-const norFlag =
-  "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg";
-
-const Plane = ({ progress, width = 100 }) => {
+const Floater = ({ src = PlaneImg, progress, width = 100 }) => {
   return (
     <Box
       sx={{
@@ -16,9 +12,9 @@ const Plane = ({ progress, width = 100 }) => {
         top: 20,
       }}
     >
-      <img width={width} src={PlaneImg}></img>
+      <img width={width} src={src}></img>
     </Box>
   );
 };
 
-export default Plane;
+export default Floater;

@@ -11,15 +11,17 @@ import {
   longTimeFormat,
   formatPercent,
 } from "../utils/formatUtils";
-import Plane from "./Countdown/Plane";
+import Floater from "./Countdown/Floater";
+import MexFlag from "./Countdown/MEX.png";
+import NorFlag from "./Countdown/NOR.png";
 
 const april = "2026-04-10T00:00:00";
 const testTime = "2025-08-20T23:59:00";
 const test2Time = "2025-08-21T23:59:00";
 const boughtTime = "2025-08-08T12:00:00";
-const departTime = "2025-09-18T06:50:00";
+const departTime = "2025-09-20T06:50:00";
 const departZone = "Mexico/General";
-const arriveTime = "2025-09-19T08:55:00";
+const arriveTime = "2025-09-21T12:45:00";
 const arriveZone = "Europe/Oslo";
 const dayoffset = { hours: 24 };
 const weekoffset = { days: 7 };
@@ -68,7 +70,9 @@ const Countdown = () => {
         padding: 2,
       }}
     >
-      <Plane progress={boughtToArriveProgress} width={80} />
+      <Floater src={MexFlag} progress={0} />
+      <Floater src={NorFlag} progress={1} />
+      <Floater progress={boughtToArriveProgress} width={80} />
       <Container maxWidth="lg">
         <Paper
           elevation={3}
