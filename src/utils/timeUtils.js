@@ -1,6 +1,17 @@
 import { DateTime } from "luxon";
 
+const birthday = "2001-09-07";
+const birthMonth = birthday.split("-")[1];
+const birthDayDay = birthday.split("-")[2];
 // Get duration between two date/time strings with time zones
+
+export function getCurrentTimeDiffSimple(endDateTime) {
+  return getDurationSimple(new Date().toISOString(), endDateTime);
+}
+export function getDurationSimple(startDateTime, endDateTime) {
+  return getDuration(startDateTime, "Europe/Oslo", endDateTime, "Europe/Oslo");
+}
+
 export function getDuration(startDateTime, startZone, endDateTime, endZone) {
   const start = DateTime.fromISO(startDateTime, { zone: startZone }).toUTC();
   const end = DateTime.fromISO(endDateTime, { zone: endZone }).toUTC();
@@ -74,4 +85,42 @@ export function getMilliseconds(duration) {
     seconds * 1000 +
     milliseconds
   );
+}
+export function closestBirthday() {
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const month = birthMonth;
+  const day = birthDayDay;
+  // Candidate: this year's birthday
+  let birthdayThisYear = new Date(currentYear, month - 1, day);
+
+  // Candidate: next year's birthday
+  let birthdayNextYear = new Date(currentYear + 1, month - 1, day);
+
+  // Candidate: last year's birthday
+  let birthdayLastYear = new Date(currentYear - 1, month - 1, day);
+
+  // Compute absolute differences in days
+  const diffThis = Math.abs(birthdayThisYear - today);
+  const diffNext = Math.abs(birthdayNextYear - today);
+  const diffLast = Math.abs(birthdayLastYear - today);
+
+  // Pick the closest
+  if (diffThis <= diffNext && diffThis <= diffLast) {
+    return birthdayThisYear;
+  } else if (diffNext < diffLast) {
+    return birthdayNextYear;
+  } else {
+    return birthdayLastYear;
+  }
+}
+export function getBirthdayOffset() {
+  const cb = closestBirthday().toISOString();
+  console.log("cockkk" + closestBirthday());
+  console.log("balls" + cb);
+  return getCurrentTimeDiffSimple(cb);
+}
+export function normalBirthdayDisplay() {
+  const offset = getBirthdayOffset().days;
+  return "in " + offset + " days";
 }

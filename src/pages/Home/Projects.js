@@ -32,7 +32,7 @@ function Project({ name, img, desc, tags, link }) {
   const imgHeight = 100;
   const playButtonHeight = 40;
   return (
-    <Grid item xs={12} sm={6} md={4}>
+    <Grid key={name} item xs={12} sm={6} md={4}>
       <Card
         sx={{
           width: `${width}px`,
@@ -126,15 +126,16 @@ function Projects() {
       <Box mt={5}>
         <Grid
           container
-          spacing={3}
-          justifyContent={isMobile ? "center" : "left"}
+          spacing={2}
+          columns={12}
+          justifyContent={isMobile ? "center" : "flex-start"}
         >
           <Project
             name="Oath to Burn"
             img={OTBImage}
             desc="Fantasy adventure"
             tags={["2025"]}
-            link="https://torbst.itch.io/dome"
+            link="https://torbst.itch.io/oath-to-burn"
           />
           <Project
             name="D.O.M.E."

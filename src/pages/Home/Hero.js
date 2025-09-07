@@ -13,19 +13,16 @@ import {
 import Tooti from "./Tooti";
 import TorontoImg from "./kurrahty.png";
 import useIsMobile from "../../hooks/useIsMobile";
+import { DateTime, Duration, Interval } from "luxon";
 import { CircleBlobs } from "./Blobs";
 import { useThemeSwitcher } from "../../ThemeContext";
+import { ordinalForm } from "../../utils/formatUtils";
+
+const birthdayNostalgiaLimit = 10;
+const birthdayAnticipationLimit = 10;
 
 function Hero() {
   const theme = useThemeSwitcher();
-  const birthDate = "2001-09-22";
-  const age =
-    new Date().getFullYear() -
-    new Date(birthDate).getFullYear() -
-    (new Date().setFullYear(new Date().getFullYear()) <
-    new Date(birthDate).setFullYear(new Date().getFullYear())
-      ? 1
-      : 0);
 
   const isMobile = useIsMobile();
   const maskWidth = 398;
@@ -67,8 +64,9 @@ the Province of Ontario, or any associated entities.
             >
               Toronto
             </Tooti>
-            . I'm {age} years old and I am currently doing a Master of
-            Informatics, specifically about interaction design.
+            . {yearsOld()} currently doing a Master of Informatics, with a focus
+            on interaction design. My thesis is about Collaborative Classroom
+            Learning Games.
           </Typography>
         </Box>
         <Box mt={3}>
@@ -107,5 +105,28 @@ the Province of Ontario, or any associated entities.
     </Box>
   );
 }
+function yearsOld() {
+  const now = DateTime.now();
+  const birthday = DateTime.fromISO("2001-09-22");
+  const age = Interval.fromDateTimes(birthday, now);
+  const closestIntAge = Math.round(age.length("years"));
+  const ageInt = Math.floor(age.length("years"));
+  const closestBirthday = birthday.plus({ years: closestIntAge });
+  const daysLeft = Math.ceil(closestBirthday.diff(now, "days").days);
 
+  if (daysLeft == 0)
+    return `Today is my ${ordinalForm(ageInt)} birthday! Yay! Anyways, I am`;
+  if (daysLeft == 1) return `I turn ${ageInt + 1} years tomorrow, and I am`;
+  if (daysLeft == -1) return `I turned ${ageInt} years yesterday, and I am`;
+  if (daysLeft > 0 && daysLeft <= birthdayAnticipationLimit)
+    return `My ${ordinalForm(
+      ageInt + 1
+    )} birthday is in ${daysLeft} days, and I am`;
+  if (daysLeft < 0 && daysLeft >= -1 * birthdayNostalgiaLimit)
+    return `I recently celebrated my ${ordinalForm(
+      ageInt
+    )} birthday (${Math.abs(daysLeft)} days ago), and I am`;
+
+  return `I am ${ageInt} years old,`;
+}
 export default Hero;

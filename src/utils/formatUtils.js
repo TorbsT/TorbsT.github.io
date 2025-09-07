@@ -55,7 +55,25 @@ export function formatPercent(value, digits = 3) {
     maximumSignificantDigits: digits,
   }).format(value);
 }
+export function ordinalForm(number) {
+  const j = number % 10,
+    k = number % 100;
 
+  if (k >= 11 && k <= 13) {
+    return number + "th";
+  }
+
+  switch (j) {
+    case 1:
+      return number + "st";
+    case 2:
+      return number + "nd";
+    case 3:
+      return number + "rd";
+    default:
+      return number + "th";
+  }
+}
 function twoDigit(number) {
   if (number < 10) return "0" + number.toString();
   return number.toString();
