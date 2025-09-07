@@ -27,6 +27,7 @@ function Hero() {
   const isMobile = useIsMobile();
   const maskWidth = 398;
   const maskHeight = Math.floor((maskWidth * 1474) / 1110);
+  const width = 600;
   return (
     <Box
       mt={7}
@@ -36,6 +37,9 @@ function Hero() {
         height: { maskHeight },
         overflowX: "hidden",
         overflowY: "hidden",
+        width: "100%",
+        maxWidth: isMobile ? width : "100%",
+        margin: "0 auto", // centers grid horizontally
       }}
     >
       <Box mt={5}>
@@ -86,21 +90,27 @@ the Province of Ontario, or any associated entities.
       <Box
         sx={{
           position: "relative",
-          display: "flex",
-          justifyContent: "flex-end", // Aligns content to the right
-          alignItems: "center", // Optional: vertical center
           width: "100%",
-          height: "100%", // or a fixed height if needed
+          display: "flex",
+          justifyContent: isMobile ? "center" : "flex-end", // centers the wrapper on mobile
         }}
       >
-        <img src={TorontoImg} width={maskWidth} height={maskHeight} />
-        <CircleBlobs
-          top={130}
-          right={100}
-          count={12}
-          size={100}
-          vertexSize={200}
-        />
+        <Box
+          sx={{
+            position: "relative", // for CircleBlobs absolute positioning
+            width: maskWidth,
+            height: maskHeight,
+          }}
+        >
+          <img src={TorontoImg} width={maskWidth} height={maskHeight} />
+          <CircleBlobs
+            top={130}
+            right={100}
+            count={12}
+            size={100}
+            vertexSize={200}
+          />
+        </Box>
       </Box>
     </Box>
   );

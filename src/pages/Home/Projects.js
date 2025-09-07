@@ -22,87 +22,130 @@ import HexaImage from "./hexaphobia.png";
 import OTBImage from "./oathtoburn.jpg";
 import useIsMobile from "../../hooks/useIsMobile";
 
+const cardSpacing = 12;
+const width = 250;
+const height = 300;
+const imgHeight = 100;
+const playButtonHeight = 40;
+const maxColumns = 3;
+
+const projectData = [
+  {
+    name: "Oath to Burn",
+    img: OTBImage,
+    desc: "Fantasy adventure",
+    tags: ["2025"],
+    link: "https://torbst.itch.io/oath-to-burn",
+  },
+  {
+    name: "D.O.M.E.",
+    img: DomeImage,
+    desc: "Burnout simulator that's played with a single button",
+    tags: ["2024"],
+    link: "https://torbst.itch.io/dome",
+  },
+  {
+    name: "Dream Escape",
+    img: DreamImage,
+    desc: "Puzzle platformer with dimension traversal",
+    tags: ["2023"],
+    link: "https://torbst.itch.io/dream-escape",
+  },
+  {
+    name: "Hexaphobia",
+    img: HexaImage,
+    desc: "A game for those who hate that number between 5 and 7",
+    tags: ["2022"],
+    link: "https://torbst.itch.io/hexaphobia",
+  },
+  {
+    name: "Allied Abductees",
+    img: AlliedImage,
+    desc: "Endless runner",
+    tags: ["2021"],
+    link: "https://torbst.itch.io/allied-abductees",
+  },
+];
+
 function Tag({ text }) {
   return <Chip label={text} clickable={false} variant="outlined" />;
 }
 function Project({ name, img, desc, tags, link }) {
   const isMobile = useIsMobile();
-  const width = 250;
-  const height = 300;
-  const imgHeight = 100;
-  const playButtonHeight = 40;
+
   return (
-    <Grid key={name} item xs={12} sm={6} md={4}>
-      <Card
+    <Card
+      sx={{
+        width: `${width}px`,
+        height: `${height}px`,
+      }}
+    >
+      <CardMedia
+        component="img"
+        height={imgHeight}
+        image={img}
+        alt={`Project ${name}`}
+      />
+      <CardContent
         sx={{
-          width: `${width}px`,
-          height: `${height}px`,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          height: `${height - imgHeight}px`,
         }}
       >
-        <CardMedia
-          component="img"
-          height={imgHeight}
-          image={img}
-          alt={`Project ${name}`}
-        />
-        <CardContent
+        <Box>
+          <Typography gutterBottom variant="h6">
+            {name}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {desc}
+          </Typography>
+        </Box>
+        <Box
+          display="flex"
+          flexDirection="row"
+          gap={1}
+          height={playButtonHeight}
           sx={{
-            display: "flex",
-            flexDirection: "column",
             justifyContent: "space-between",
-            height: `${height - imgHeight}px`,
           }}
         >
-          <Box>
-            <Typography gutterBottom variant="h6">
-              {name}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {desc}
-            </Typography>
-          </Box>
-          <Box
-            display="flex"
-            flexDirection="row"
-            gap={1}
-            height={playButtonHeight}
-            sx={{
-              justifyContent: "space-between",
-            }}
+          <Button
+            variant="contained"
+            startIcon={<PlayCircleOutlineIcon />}
+            color="primary"
+            component="a"
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Button
-              variant="contained"
-              startIcon={<PlayCircleOutlineIcon />}
-              color="primary"
-              component="a"
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Play
-            </Button>
-            <Box>
-              {tags.map((tag, index) => (
-                <Box
-                  key={index}
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  height={playButtonHeight}
-                >
-                  <Tag text={tag} />
-                </Box>
-              ))}
-            </Box>
+            Play
+          </Button>
+          <Box>
+            {tags.map((tag, index) => (
+              <Box
+                key={index}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                height={playButtonHeight}
+              >
+                <Tag text={tag} />
+              </Box>
+            ))}
           </Box>
-        </CardContent>
-      </Card>
-    </Grid>
+        </Box>
+      </CardContent>
+    </Card>
   );
 }
 
 function Projects() {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(); // <-- Add this line
+  // Always use maxColumns, even on mobile
+  const columns = maxColumns;
+
   return (
     <Box mt={10} sx={{ backgroundColor: "background.highlight" }}>
       <Box>
@@ -112,7 +155,7 @@ function Projects() {
           component="h2"
           sx={{
             fontWeight: 500,
-            color: "secondary.main", // or 'primary.main' for consistency
+            color: "secondary.main",
           }}
           gutterBottom
         >
@@ -124,48 +167,31 @@ function Projects() {
         </Typography>
       </Box>
       <Box mt={5}>
-        <Grid
-          container
-          spacing={2}
-          columns={12}
-          justifyContent={isMobile ? "center" : "flex-start"}
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "flex-start",
+            maxWidth: `${width * columns + cardSpacing * columns}px`,
+            justifyContent: isMobile ? "center" : "flex-start", // Center on mobile, left on desktop
+            marginLeft: isMobile ? "auto" : undefined,
+            marginRight: isMobile ? "auto" : undefined,
+          }}
         >
-          <Project
-            name="Oath to Burn"
-            img={OTBImage}
-            desc="Fantasy adventure"
-            tags={["2025"]}
-            link="https://torbst.itch.io/oath-to-burn"
-          />
-          <Project
-            name="D.O.M.E."
-            img={DomeImage}
-            desc="Burnout simulator that's played with a single button"
-            tags={["2024"]}
-            link="https://torbst.itch.io/dome"
-          />
-          <Project
-            name="Dream Escape"
-            img={DreamImage}
-            desc="Puzzle platformer with dimension traversal"
-            tags={["2023"]}
-            link="https://torbst.itch.io/dream-escape"
-          />
-          <Project
-            name="Hexaphobia"
-            img={HexaImage}
-            desc="A game for those who hate that number between 5 and 7"
-            tags={["2022"]}
-            link="https://torbst.itch.io/hexaphobia"
-          />
-          <Project
-            name="Allied Abductees"
-            img={AlliedImage}
-            desc="Endless runner"
-            tags={["2021"]}
-            link="https://torbst.itch.io/allied-abductees"
-          />
-        </Grid>
+          {projectData.map((project, idx) => (
+            <Box
+              key={project.name}
+              sx={{
+                width: `${width}px`,
+                marginBottom: `${cardSpacing}px`,
+                marginRight: `${isMobile ? cardSpacing / 2 : cardSpacing}px`,
+                marginLeft: `${isMobile ? cardSpacing / 2 : 0}px`,
+              }}
+            >
+              <Project {...project} />
+            </Box>
+          ))}
+        </Box>
       </Box>
     </Box>
   );
