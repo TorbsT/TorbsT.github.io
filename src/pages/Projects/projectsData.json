@@ -1,0 +1,220 @@
+{
+  "oldProjects": [
+    {
+      "title": "Sintef's traffic game",
+      "desc": "Online multiplayer traffic orchestration game made at the request of Sintef. This is the result of my bachelor project.",
+      "img": "sintefdigitalboardgame.png",
+      "startyear": 2023,
+      "endyear": 2023,
+      "techStack": ["unity", "rust"],
+      "links": [
+        {
+          "template": "pdf",
+          "link": "IT2901___Sintef_Digital_Board_Game.pdf"
+        },
+        {
+          "template": "github",
+          "text": "View source code on Github (Client)",
+          "link": "https://github.com/TorbsT/SintefDigital_boardGame_client"
+        },
+        {
+          "template": "github",
+          "text": "View source code on Github (Server)",
+          "link": "https://github.com/TorbsT/SintefDigital_boardGame_server"
+        }
+      ]
+    },
+    {
+      "title": "TorbuTils",
+      "desc": "Utilities package for Unity. Includes functionality for graphs, noise generation, animations, and object pooling.",
+      "img": "torbutils.png",
+      "links": [
+        { "template": "github", "link": "https://github.com/TorbsT/Torbutils" }
+      ],
+      "techStack": ["unity"],
+      "startyear": 2021
+    },
+    {
+      "title": "Battle for Hermannia",
+      "desc": "Turn-based strategy game. Based on the board game with the same name. Made in collaboration with Immerse NTNU.",
+      "img": "bfh.png",
+      "links": [
+        {
+          "template": "github",
+          "link": "https://github.com/immerse-ntnu/bfh-client"
+        }
+      ],
+      "techStack": ["unity"],
+      "startyear": 2022
+    },
+    {
+      "title": "Tech Through Time",
+      "desc": "Tech Through Time is a design concept for a learning game. The idea is to progress through different eras while learning how to make real-world technology.",
+      "youtube": "https://www.youtube.com/embed/McMZpKEG3_A",
+      "techStack": ["gdd"],
+      "links": [{ "template": "pdf", "link": "techthroughtime.pdf" }],
+      "startyear": 2022,
+      "endyear": 2022
+    },
+    {
+      "title": "FitFighter",
+      "desc": "Concept for an exergame. Players fight in one-on-one virtual boxing matches, and the one with better speed and skill wins. The game features pre-match warmups and post-match briefs to improve performance and health.",
+      "youtube": "https://www.youtube.com/embed/rmNXm5p2Uu8",
+      "techStack": ["gdd"],
+      "links": [{ "template": "pdf", "link": "fitfighter.pdf" }],
+      "startyear": 2022,
+      "endyear": 2022
+    },
+    {
+      "title": "GamerMeet",
+      "desc": "Game design document providing an idea for gamifying social interaction. Users get rewards in partnered video games when completing challenges in the GamerMeet app. Challenges are powered by machine learning which helps people start socializing at a reasonable pace.",
+      "youtube": "https://www.youtube.com/embed/x0e2AxPa-KE",
+      "techStack": ["gdd", "sd"],
+      "links": [{ "template": "pdf", "link": "gamermeet.pdf" }],
+      "startyear": 2022,
+      "endyear": 2022
+    },
+    {
+      "title": "Hexaphobia",
+      "desc": "Hexaphobia is a game about that scary number between 5 and 7. The game jam's theme was 'Roll of the dice', which I implemented as a high-risk high-reward ability where you quite literally roll the dice.",
+      "img": "hexaphobia.png",
+      "techStack": ["unity"],
+      "startyear": 2022,
+      "endyear": 2022,
+      "links": [
+        {
+          "template": "github",
+          "link": "https://github.com/TorbsT/Hexaphobia"
+        },
+        { "template": "itch", "link": "https://torbst.itch.io/hexaphobia" }
+      ]
+    },
+    {
+      "title": "Tiss",
+      "desc": "Top-down horde/survival game. In order to survive for long, players must build and maintain a base. The problem is that the environment rotates and completely changes the map layout on a regular basis.",
+      "img": "tiss.png",
+      "youtube": "https://www.youtube.com/embed/5fmsrvn3kyU",
+      "techStack": ["unity"],
+      "startyear": 2022,
+      "endyear": 2022,
+      "links": [
+        { "template": "github", "link": "https://github.com/TorbsT/Tiss" },
+        { "template": "itch", "link": "https://torbst.itch.io/tiss" }
+      ]
+    },
+    {
+      "title": "DishWish",
+      "desc": "A website for finding and sharing cooking recipes. Uses React, Firebase, and authentication through Google. Created by a diverse team practising agile development.",
+      "img": "dishwish.png",
+      "startyear": 2022,
+      "endyear": 2022,
+      "techStack": ["react", "firebase"],
+      "links": [
+        {
+          "template": "gitlab",
+          "link": "https://gitlab.stud.idi.ntnu.no/tdt4140-2022/landsby-3/40/dishwish"
+        },
+        { "template": "webp", "link": "https://dishwish.herokuapp.com" }
+      ]
+    },
+    {
+      "title": "Talgdat",
+      "desc": "A Unity application that can visualize the process of various sorting algorithms.",
+      "img": "talgdat.png",
+      "vid": "talgdat.mp4",
+      "startyear": 2021,
+      "endyear": 2021,
+      "techStack": ["unity"],
+      "links": [
+        { "template": "github", "link": "https://github.com/TorbsT/Talgdat" }
+      ]
+    },
+    {
+      "title": "O'Burger: Barackening",
+      "desc": "App for ordering food from O'Burger. A continuation of the legendary O'Burger series, which now supports sending and retrieving orders on an external server. This was our project for the course IT1901. Made by a team of four practising agile development.",
+      "img": "oburger-barackening.png",
+      "startyear": 2021,
+      "endyear": 2021,
+      "techStack": ["spring", "java"],
+      "links": [
+        {
+          "template": "gitlab",
+          "link": "https://gitlab.stud.idi.ntnu.no/it1901/groups-2021/gr2137/gr2137"
+        }
+      ],
+      "width": 900
+    },
+    {
+      "title": "Allied Abductees",
+      "desc": "Submission for the 2021 GMTK game jam. Made in 48 hours with Unity and C# by a team of three. The theme was 'Joined together', which we implemented as controlling multiple conjoined characters.",
+      "img": "alliedabductees.png",
+      "vid": "alliedabductees.mp4",
+      "startyear": 2021,
+      "endyear": 2021,
+      "techStack": ["unity"],
+      "links": [
+        {
+          "template": "github",
+          "link": "https://github.com/TorbsT/AlliedAbductees"
+        },
+        {
+          "template": "itch",
+          "link": "https://torbst.itch.io/allied-abductees"
+        }
+      ],
+      "width": 900
+    },
+    {
+      "title": "Memory game",
+      "desc": "A memory game about matching pictures of various environments. Made with Java by a team of two. This was our project for the course TDT4100 (2021).",
+      "img": "memorygame.PNG",
+      "startyear": 2021,
+      "endyear": 2021,
+      "techStack": ["java"],
+      "links": [
+        {
+          "template": "gitlab",
+          "link": "https://gitlab.stud.idi.ntnu.no/tdt4100/v2021/student_projects/tdt4100-prosjekt-marcussn"
+        }
+      ]
+    },
+    {
+      "title": "O'Burger",
+      "desc": "Obama's very official burger website. Made with HTML, JS and CSS by a team of five. This was our project for the course IT2805 (2020).",
+      "img": "oburger.gif",
+      "startyear": 2020,
+      "endyear": 2020,
+      "techStack": ["html", "javascript", "css"],
+      "links": [
+        {
+          "template": "github",
+          "link": "https://github.com/sindrimt/O-Burger"
+        },
+        {
+          "template": "webp",
+          "link": "https://folk.ntnu.no/torbjss/Documents/html/"
+        }
+      ]
+    },
+    {
+      "title": "The maze runner",
+      "desc": "One of my first large projects. This adventure map in Minecraft is based on the popular franchise with the same name. I have since release lost access to the world files, which gave me a good reason to learn Git.",
+      "img": "mazeRunner.gif",
+      "startyear": 2015,
+      "endyear": 2016,
+      "techStack": ["minecraft", "cmdblock"],
+      "width": 900
+    },
+    {
+      "title": "Frontegy",
+      "desc": "A mix of chess and poker. Frontegy was primarily a sandbox for me to experiment with different coding strategies. At the time I was inexperienced with Unity development and could therefore not make a finished product.",
+      "img": "frontegy.PNG",
+      "startyear": 2020,
+      "endyear": 2021,
+      "techStack": ["unity"],
+      "links": [
+        { "template": "github", "link": "https://github.com/TorbsT/Frontegy" }
+      ]
+    }
+  ]
+}

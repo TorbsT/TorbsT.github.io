@@ -8,6 +8,8 @@ import Countdown from "./pages/Countdown";
 import NotFound from "./pages/NotFound";
 import CursorTrail from "./garbage/CursorTrail";
 import MainPage from "./pages/Home/MainPage";
+import Projects from "./pages/Projects/Projects";
+import EvilWordle from "./pages/EvilWordle/EvilWordle";
 
 export default function App() {
   return (
@@ -25,6 +27,8 @@ export default function App() {
       <Route path="/blobs" element={<Blobs />} />
       <Route path="/layout" element={<Layout />} />
       <Route path="/countdown" element={<Countdown />} />
+      <Route path="/projects" element={<Projects />} />
+      <Route path="/evilwordle" element={<EvilWordle />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

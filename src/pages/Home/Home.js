@@ -12,9 +12,7 @@ import {
   Button,
   SwipeableDrawer,
 } from "@mui/material";
-import TralaleroImage from "./Tralalero_tralala.jpg";
 import Hero from "./Hero";
-import Projects from "./Projects";
 import Exp from "./Exp";
 import Edu from "./Edu";
 import Footer from "./Footer";

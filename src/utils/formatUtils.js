@@ -13,7 +13,9 @@ export function longTimeFormat(attribute) {
     );
   if (attribute.seconds)
     parts.push(
-      `${attribute.seconds}\u00A0second${attribute.seconds !== 1 ? "s" : ""}`
+      `${Math.floor(attribute.seconds)}\u00A0second${
+        Math.floor(attribute.seconds) !== 1 ? "s" : ""
+      }`
     );
 
   if (parts.length === 0) return "0\u00A0seconds";
@@ -41,9 +43,13 @@ export function shortTimeFormat(attribute) {
   const parts = [];
 
   if (attribute.days) parts.push(attribute.days);
-  if (attribute.hours) parts.push(twoDigit(attribute.hours));
-  if (attribute.minutes) parts.push(twoDigit(attribute.minutes));
-  if (attribute.seconds) parts.push(twoDigit(attribute.seconds));
+  attribute.hours ? parts.push(twoDigit(attribute.hours)) : parts.push("00");
+  attribute.minutes
+    ? parts.push(twoDigit(attribute.minutes))
+    : parts.push("00");
+  attribute.seconds
+    ? parts.push(twoDigit(attribute.seconds))
+    : parts.push("00");
 
   const clock = parts.join(":");
 

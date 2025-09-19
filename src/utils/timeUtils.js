@@ -5,6 +5,9 @@ const birthMonth = birthday.split("-")[1];
 const birthDayDay = birthday.split("-")[2];
 // Get duration between two date/time strings with time zones
 
+export function getCurrentTimeDiff(endDateTime, endTimeZone) {
+  return getDuration(new Date().toISOString(), "utc", endDateTime, endTimeZone);
+}
 export function getCurrentTimeDiffSimple(endDateTime) {
   return getDurationSimple(new Date().toISOString(), endDateTime);
 }
@@ -116,8 +119,6 @@ export function closestBirthday() {
 }
 export function getBirthdayOffset() {
   const cb = closestBirthday().toISOString();
-  console.log("cockkk" + closestBirthday());
-  console.log("balls" + cb);
   return getCurrentTimeDiffSimple(cb);
 }
 export function normalBirthdayDisplay() {

@@ -12,9 +12,8 @@ import {
   Button,
   SwipeableDrawer,
 } from "@mui/material";
-import TralaleroImage from "./Tralalero_tralala.jpg";
 import Hero from "./Hero";
-import Projects from "./Projects";
+import { Games } from "../Projects/Projects";
 import Exp from "./Exp";
 import Edu from "./Edu";
 import Footer from "./Footer";
@@ -39,7 +38,7 @@ function MainPage() {
 
       {/* Games Section */}
       <Element name="games">
-        <Projects />
+        <Games />
       </Element>
 
       <Element name="experience">

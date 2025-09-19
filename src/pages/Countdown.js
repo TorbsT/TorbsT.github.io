@@ -5,6 +5,7 @@ import {
   getDuration,
   getMilliseconds,
   calculateTimeSince,
+  getCurrentTimeDiff,
 } from "../utils/timeUtils";
 import {
   shortTimeFormat,
@@ -14,26 +15,32 @@ import {
 import Floater from "./Countdown/Floater";
 import MexFlag from "./Countdown/MEX.png";
 import NorFlag from "./Countdown/NOR.png";
+import flights from "./Countdown/flights.json";
+import FlightDetails from "./Countdown/FlightDetails";
 
 const april = "2026-04-10T00:00:00";
 const testTime = "2025-08-20T23:59:00";
 const test2Time = "2025-08-21T23:59:00";
 const boughtTime = "2025-08-08T12:00:00";
-const departTime = "2025-09-20T06:50:00";
-const departZone = "Mexico/General";
-const arriveTime = "2025-09-21T12:45:00";
-const arriveZone = "Europe/Oslo";
+const departTime = flights[0].departure_time;
+const departZone = flights[0].timezone;
+const arriveTime = flights[flights.length - 1].arrival_time;
+const arriveZone = flights[flights.length - 1].timezone;
 const dayoffset = { hours: 24 };
 const weekoffset = { days: 7 };
 const relativeUpdateDelay = 33;
 
+let timeLeft;
+let departToArriveDuration;
+let futureProgress;
+let nowToDepartDuration;
 const chosenoffset = dayoffset;
 const significantDigits = 3;
 
 const Countdown = () => {
   const theme = useTheme(); // Access theme palette
-  const timeLeft = useCountdown(departTime, departZone);
-  const departToArriveDuration = getDuration(
+  timeLeft = useCountdown(departTime, departZone);
+  departToArriveDuration = getDuration(
     departTime,
     departZone,
     arriveTime,
@@ -47,12 +54,14 @@ const Countdown = () => {
   );
   const boughtToNowDuration = calculateTimeSince(boughtTime, departZone);
 
-  const futureProgress = useRelativeProgress(
+  futureProgress = useRelativeProgress(
     departTime,
     departZone,
     chosenoffset,
     relativeUpdateDelay
   );
+
+  nowToDepartDuration = getCurrentTimeDiff(departTime, departZone);
 
   const boughtToArriveProgress =
     getMilliseconds(boughtToNowDuration) /
@@ -83,24 +92,41 @@ const Countdown = () => {
             bgcolor: theme.palette.secondary.dark,
           }}
         >
-          <Typography variant="h3" component="h1" gutterBottom>
-            {shortTimeFormat(timeLeft)}
-          </Typography>
-          <Typography variant="h5" component="h2" gutterBottom>
-            until Fatim leaves for Norway.
-          </Typography>
-          <Typography variant="h5" component="h2" gutterBottom>
-            In {longTimeFormat(chosenoffset)}, about{" "}
-            {formatPercent(futureProgress, significantDigits)} of the wait will
-            be over.
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            The trip will last for {longTimeFormat(departToArriveDuration)}.
-          </Typography>
+          {getMilliseconds(nowToDepartDuration) <= 0 ? (
+            <FlightDetails />
+          ) : (
+            beforeDepart()
+          )}
         </Paper>
       </Container>
     </Box>
   );
 };
 
+const beforeDepart = () => {
+  return (
+    <>
+      <Typography variant="h3" component="h1" gutterBottom>
+        {shortTimeFormat(timeLeft)}
+      </Typography>
+      <Typography variant="h5" component="h2" gutterBottom>
+        until Fatim leaves for Norway.
+      </Typography>
+      {nowToDepartDuration.days == 0 ? (
+        <Typography variant="h5" component="h2" gutterBottom>
+          Leaving soon!!!!
+        </Typography>
+      ) : (
+        <Typography variant="h5" component="h2" gutterBottom>
+          In {longTimeFormat(chosenoffset)}, about{" "}
+          {formatPercent(futureProgress, significantDigits)} of the wait will be
+          over.
+        </Typography>
+      )}
+      <Typography variant="body1" color="text.secondary">
+        The trip will last for {longTimeFormat(departToArriveDuration)}.
+      </Typography>
+    </>
+  );
+};
 export default Countdown;

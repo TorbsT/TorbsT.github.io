@@ -1,0 +1,27 @@
+[
+  {
+    "airport": "MEX",
+    "timezone": "America/Mexico_City",
+    "departure_time": "2025-09-20T06:50:00",
+    "flight_number": "AM408"
+  },
+  {
+    "airport": "JFK",
+    "timezone": "America/New_York",
+    "arrival_time": "2025-09-20T14:00:00",
+    "departure_time": "2025-09-20T18:55:00",
+    "flight_number": "SK916"
+  },
+  {
+    "airport": "CPH",
+    "timezone": "Europe/Copenhagen",
+    "arrival_time": "2025-09-21T08:40:00",
+    "departure_time": "2025-09-21T11:10:00",
+    "flight_number": "SK2888"
+  },
+  {
+    "airport": "TRD",
+    "timezone": "Europe/Oslo",
+    "arrival_time": "2025-09-21T12:45:00"
+  }
+]
