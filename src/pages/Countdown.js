@@ -34,6 +34,7 @@ let timeLeft;
 let departToArriveDuration;
 let futureProgress;
 let nowToDepartDuration;
+let nowToArriveDuration;
 const chosenoffset = dayoffset;
 const significantDigits = 3;
 
@@ -62,6 +63,7 @@ const Countdown = () => {
   );
 
   nowToDepartDuration = getCurrentTimeDiff(departTime, departZone);
+  nowToArriveDuration = getCurrentTimeDiff(arriveTime, arriveZone);
 
   const boughtToArriveProgress =
     getMilliseconds(boughtToNowDuration) /
@@ -86,13 +88,15 @@ const Countdown = () => {
         <Paper
           elevation={3}
           sx={{
-            padding: 4,
+            padding: 1,
             textAlign: "center",
             borderRadius: 3,
             bgcolor: theme.palette.secondary.dark,
           }}
         >
-          {getMilliseconds(nowToDepartDuration) <= 0 ? (
+          {getMilliseconds(nowToArriveDuration) <= 0 ? (
+            afterArrive()
+          ) : getMilliseconds(nowToDepartDuration) <= 0 ? (
             <FlightDetails />
           ) : (
             beforeDepart()
@@ -103,6 +107,19 @@ const Countdown = () => {
   );
 };
 
+const afterArrive = () => {
+  return (
+    <Box
+      sx={{
+        padding: 4,
+      }}
+    >
+      <Typography variant="h3" component="h1" gutterBottom>
+        Welcome to Norway!!!
+      </Typography>
+    </Box>
+  );
+};
 const beforeDepart = () => {
   return (
     <>

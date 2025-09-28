@@ -106,7 +106,7 @@ export default function FlightDetails() {
   const current = timeline[step];
 
   return (
-    <Box sx={{ p: 4 }}>
+    <Box sx={{ p: 0 }}>
       {current.type === "flight" ? (
         <FlightSlide flight={current} isCurrent={step === currentTimeSlide} />
       ) : (
@@ -116,7 +116,11 @@ export default function FlightDetails() {
         />
       )}
 
-      <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
+      <Stack
+        direction="row"
+        spacing={2}
+        sx={{ mt: 2, alignContent: "center", justifyContent: "center" }}
+      >
         <Button
           variant="contained"
           disabled={step === 0}

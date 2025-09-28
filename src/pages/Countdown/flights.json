@@ -2,13 +2,13 @@
   {
     "airport": "MEX",
     "timezone": "America/Mexico_City",
-    "departure_time": "2025-09-27T22:05:00",
+    "departure_time": "2025-09-27T23:30:00",
     "flight_number": "AF0173"
   },
   {
     "airport": "CDG",
     "timezone": "Europe/Paris",
-    "arrival_time": "2025-09-28T16:50:00",
+    "arrival_time": "2025-09-28T17:29:00",
     "departure_time": "2025-09-28T21:00:00",
     "flight_number": "AF1274"
   },
