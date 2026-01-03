@@ -24,6 +24,7 @@ import useIsMobile from "../../hooks/useIsMobile";
 import { Link, Element } from "react-scroll";
 import Mask from "./Mask";
 import Bouncer from "./BouncingShit";
+import Starr from "./StarShit";
 import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 const Home = ({ children }) => {
@@ -53,6 +54,9 @@ const Home = ({ children }) => {
               zIndex: 1000,
             }}
           >
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Starr key={i} id={i} />
+            ))}
             {Array.from({ length: 6 }).map((_, i) => (
               <Bouncer key={i} id={i} />
             ))}

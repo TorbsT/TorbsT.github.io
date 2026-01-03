@@ -16,3 +16,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@keyframes starrOrbit {
+  0% {
+    transform: rotate(var(--angle)) translateX(0px);
+  }
+  100% {
+    transform: rotate(calc(var(--angle) + 0deg)) translateX(60px);
+  }
+}
+
+@keyframes starrFade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
