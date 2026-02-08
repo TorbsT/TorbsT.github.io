@@ -21,7 +21,7 @@ import FlightDetails from "./Countdown/FlightDetails";
 const april = "2026-04-10T00:00:00";
 const testTime = "2025-08-20T23:59:00";
 const test2Time = "2025-08-21T23:59:00";
-const boughtTime = "2025-08-08T12:00:00";
+const boughtTime = "2026-02-08T14:00:00";
 const departTime = flights[0].departure_time;
 const departZone = flights[0].timezone;
 const arriveTime = flights[flights.length - 1].arrival_time;
@@ -45,13 +45,13 @@ const Countdown = () => {
     departTime,
     departZone,
     arriveTime,
-    arriveZone
+    arriveZone,
   );
   const boughtToArriveDuration = getDuration(
     boughtTime,
     departZone,
     arriveTime,
-    arriveZone
+    arriveZone,
   );
   const boughtToNowDuration = calculateTimeSince(boughtTime, departZone);
 
@@ -59,7 +59,7 @@ const Countdown = () => {
     departTime,
     departZone,
     chosenoffset,
-    relativeUpdateDelay
+    relativeUpdateDelay,
   );
 
   nowToDepartDuration = getCurrentTimeDiff(departTime, departZone);
@@ -81,8 +81,8 @@ const Countdown = () => {
         padding: 2,
       }}
     >
-      <Floater src={MexFlag} progress={0} />
-      <Floater src={NorFlag} progress={1} />
+      <Floater src={NorFlag} progress={0} />
+      <Floater src={MexFlag} progress={1} />
       <Floater progress={boughtToArriveProgress} width={80} />
       <Container maxWidth="lg">
         <Paper
@@ -127,7 +127,7 @@ const beforeDepart = () => {
         {shortTimeFormat(timeLeft)}
       </Typography>
       <Typography variant="h5" component="h2" gutterBottom>
-        until Fatim leaves for Norway.
+        until Toronto leaves for Mejiko.
       </Typography>
       {nowToDepartDuration.days == 0 ? (
         <Typography variant="h5" component="h2" gutterBottom>

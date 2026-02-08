@@ -1,20 +1,27 @@
 [
   {
+    "airport": "TRD",
+    "timezone": "Europe/Oslo",
+    "departure_time": "2026-04-21T08:50:00",
+    "flight_number": "AY948"
+  },
+  {
+    "airport": "HEL",
+    "timezone": "Europe/Helsinki",
+    "departure_time": "2026-04-21T11:55:00",
+    "arrival_time": "2026-04-21T16:40:00",
+    "flight_number": "AY1661"
+  },
+  {
+    "airport": "MAD",
+    "timezone": "Europe/Madrid",
+    "departure_time": "2026-04-21T16:05:00",
+    "arrival_time": "2026-04-21T23:55:00",
+    "flight_number": "IB303"
+  },
+  {
     "airport": "MEX",
     "timezone": "America/Mexico_City",
-    "departure_time": "2025-09-27T23:30:00",
-    "flight_number": "AF0173"
-  },
-  {
-    "airport": "CDG",
-    "timezone": "Europe/Paris",
-    "arrival_time": "2025-09-28T17:29:00",
-    "departure_time": "2025-09-28T21:00:00",
-    "flight_number": "AF1274"
-  },
-  {
-    "airport": "OSL",
-    "timezone": "Europe/Oslo",
-    "arrival_time": "2025-09-28T23:20:00"
+    "arrival_time": "2026-04-22T03:45:00"
   }
 ]
