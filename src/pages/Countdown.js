@@ -17,6 +17,7 @@ import MexFlag from "./Countdown/MEX.png";
 import NorFlag from "./Countdown/NOR.png";
 import flights from "./Countdown/flights.json";
 import FlightDetails from "./Countdown/FlightDetails";
+import { BigDay } from "./Countdown/BigDay";
 
 const april = "2026-04-10T00:00:00";
 const testTime = "2025-08-20T23:59:00";
@@ -76,11 +77,13 @@ const Countdown = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        flexDirection: "column",
         bgcolor: theme.palette.background.default,
         color: theme.palette.text.primary,
         padding: 2,
       }}
     >
+      <BigDay />
       <Floater src={NorFlag} progress={0} />
       <Floater src={MexFlag} progress={1} />
       <Floater progress={boughtToArriveProgress} width={80} />
