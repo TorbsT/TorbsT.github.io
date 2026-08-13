@@ -22,11 +22,11 @@ import { BigDay } from "./Countdown/BigDay";
 const april = "2026-04-10T00:00:00";
 const testTime = "2025-08-20T23:59:00";
 const test2Time = "2025-08-21T23:59:00";
-const boughtTime = "2026-02-08T14:00:00";
-const departTime = flights[0].departure_time;
-const departZone = flights[0].timezone;
-const arriveTime = flights[flights.length - 1].arrival_time;
-const arriveZone = flights[flights.length - 1].timezone;
+const boughtTime = flights.boughtTime;
+const departTime = flights.route[0].departure_time;
+const departZone = flights.route[0].timezone;
+const arriveTime = flights.route[flights.route.length - 1].arrival_time;
+const arriveZone = flights.route[flights.route.length - 1].timezone;
 const dayoffset = { hours: 24 };
 const weekoffset = { days: 7 };
 const relativeUpdateDelay = 33;
@@ -118,7 +118,7 @@ const afterArrive = () => {
       }}
     >
       <Typography variant="h3" component="h1" gutterBottom>
-        Welcome to Norway!!!
+        {flights.arrivedDesc}
       </Typography>
     </Box>
   );
@@ -130,7 +130,7 @@ const beforeDepart = () => {
         {shortTimeFormat(timeLeft)}
       </Typography>
       <Typography variant="h5" component="h2" gutterBottom>
-        until Toronto leaves for Mejiko.
+        {flights.desc}
       </Typography>
       {nowToDepartDuration.days == 0 ? (
         <Typography variant="h5" component="h2" gutterBottom>

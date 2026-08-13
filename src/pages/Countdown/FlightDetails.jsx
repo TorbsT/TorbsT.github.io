@@ -85,14 +85,14 @@ function findCurrentSlideIndex(timeline) {
 
 // Main FlightDetails component
 export default function FlightDetails() {
-  const timeline = buildTimeline(flights);
+  const timeline = buildTimeline(flights.route);
 
   // Currently displayed slide
   const [step, setStep] = useState(findCurrentSlideIndex(timeline));
 
   // Slide that is actually current in time
   const [currentTimeSlide, setCurrentTimeSlide] = useState(
-    getCurrentTimeSlideIndex(timeline)
+    getCurrentTimeSlideIndex(timeline),
   );
 
   // Auto-update the currentTimeSlide every 5s

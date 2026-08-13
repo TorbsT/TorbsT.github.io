@@ -1,27 +1,25 @@
-[
-  {
-    "airport": "TRD",
-    "timezone": "Europe/Oslo",
-    "departure_time": "2026-04-21T08:50:00",
-    "flight_number": "AY948"
-  },
-  {
-    "airport": "HEL",
-    "timezone": "Europe/Helsinki",
-    "departure_time": "2026-04-21T11:55:00",
-    "arrival_time": "2026-04-21T16:40:00",
-    "flight_number": "AY1661"
-  },
-  {
-    "airport": "MAD",
-    "timezone": "Europe/Madrid",
-    "departure_time": "2026-04-21T16:05:00",
-    "arrival_time": "2026-04-21T23:55:00",
-    "flight_number": "IB303"
-  },
-  {
-    "airport": "MEX",
-    "timezone": "America/Mexico_City",
-    "arrival_time": "2026-04-22T03:45:00"
-  }
-]
+{
+  "boughtTime": "2026-08-05T08:00:00",
+  "desc": "until Fatim leaves for Norge.",
+  "arrivedDesc": "Welcome to Norge",
+  "route": [
+    {
+      "airport": "MEX",
+      "timezone": "America/Mexico_City",
+      "departure_time": "2026-10-11T20:05:00",
+      "flight_number": "KL0686"
+    },
+    {
+      "airport": "AMS",
+      "timezone": "Europe/Amsterdam",
+      "arrival_time": "2026-10-12T14:45:00",
+      "departure_time": "2026-10-12T16:50:00",
+      "flight_number": "KL1205"
+    },
+    {
+      "airport": "TRD",
+      "timezone": "Europe/Oslo",
+      "arrival_time": "2026-10-12T18:35:00"
+    }
+  ]
+}
